@@ -3,6 +3,10 @@ export default {
    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
    theme: {
       extend: {
+         fontFamily: {
+        // Perbaiki nama class yang digunakan
+         inria: ["Inria Serif", "serif"], // Gunakan 'bree' sebagai nama class
+      },
          screens: {
             sm: "640px",
             md: "768px",
@@ -14,13 +18,13 @@ export default {
             padding: {
                DEFAULT: "1rem", // Tambahkan DEFAULT padding untuk mobile
                sm: "1rem",
-               md: "3rem",
-               lg: "5rem",
-               xl: "10rem",
+               md: "2rem",
+               lg: "3rem",
+               xl: "4rem",
             },
          },
       },
-      
+
    },
    plugins: [],
 };

@@ -1,3 +1,21 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+/* Tambahkan ini untuk memastikan font ter-apply secara global */
+@layer base {
+  html {
+     font-family: "Inria Serif", serif;
+  }
+}
+
+
+@layer utilities {
+  .relative-hover-effect {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+

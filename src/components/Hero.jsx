@@ -1,7 +1,15 @@
+import me from '../assets/me.jpg'
+
+
 const Hero = () => {
    return (
-      <div className="container">
-         <h1>Hero Section</h1>
+      <div className="container font-inria text-center py-20" id='hero'>
+         <div className='space-y-2'>
+            <h1 className='text-6xl font-bold '>SEORANG MAHASISWA</h1>
+            <h1 className='text-5xl font-medium'>TEKNIK INFORMATIKA</h1>
+            <div className='max-w-4xl text-end font-extralight'>(2022-present)</div>
+         </div>
+         <img src={me} alt=""  className="mt-8 mx-auto rounded-lg w-96 h-64 object-cover grayscale" />
       </div>
    );
 };
