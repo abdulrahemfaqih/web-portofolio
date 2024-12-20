@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto py-16">
       <h1 className="relative-hover-effect text-4xl font-bold mb-8">CONTACT</h1>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
