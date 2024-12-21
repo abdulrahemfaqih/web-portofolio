@@ -1,7 +1,8 @@
-import React from 'react';
 
+
+// eslint-disable-next-line react/prop-types
 const Project = ({ title, description, image, techStack, repoLink }) => (
-  <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+  <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:border hover:border-gray-200 duration-300">
     {/* Image Container */}
     <div className="relative h-52 overflow-hidden">
       <img
@@ -24,16 +25,21 @@ const Project = ({ title, description, image, techStack, repoLink }) => (
       </p>
 
       {/* Tech Stack - Using flex-wrap and gap for consistent spacing */}
-      <div className="flex flex-wrap gap-2 mb-4">
+       <div className="flex flex-wrap gap-2 mb-4">
         {techStack.map((tech, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-gray-50 text-gray-600 text-xs font-medium rounded-full border border-gray-100"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
+        <span
+          key={index}
+          className="px-3 py-1 bg-gray-50 text-gray-600 text-xs font-medium rounded-full border border-gray-100 flex items-center gap-1"
+        >
+          <img
+            src={tech.icon}
+            alt={tech.name}
+            className="w-4 h-4"
+          />
+          {tech.name}
+        </span>
+    ))}
+  </div>
 
       {/* Repository Link - Using mt-auto to push to bottom */}
       <div className="mt-auto pt-4 border-t border-gray-100">
@@ -67,24 +73,47 @@ const Projects = () => {
   const projectData = [
     {
       title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform with user authentication, product management, and payment integration. Built with modern technologies and best practices.",
+      description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
       image: "/api/placeholder/400/300",
-      techStack: ["React", "Node.js", "MongoDB", "Express"],
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Node.js",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+        },
+        {
+          name: "MongoDB",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+        },
+        {
+          name: "Express",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+        }
+      ],
       repoLink: "https://github.com/yourusername/project1"
     },
     {
       title: "Task Management App",
       description: "A collaborative task management application with real-time updates and team features.",
       image: "/api/placeholder/400/300",
-      techStack: ["React", "Firebase", "Tailwind CSS"],
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
       repoLink: "https://github.com/yourusername/project2"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A weather application showing forecasts and historical weather data with interactive charts.",
-      image: "/api/placeholder/400/300",
-      techStack: ["React", "OpenWeather API", "Chart.js"],
-      repoLink: "https://github.com/yourusername/project3"
     }
   ];
 

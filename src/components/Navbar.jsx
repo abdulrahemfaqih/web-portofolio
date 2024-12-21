@@ -76,49 +76,51 @@ const Navbar = () => {
          </div>
 
          {/* Mobile Menu */}
-         <div
-            className={`md:hidden flex flex-col space-y-4 pb-4 ${
-               isMenuOpen ? "block" : "hidden"
-            }`}
-         >
-            <a
-               className="relative-hover-effect text-2xl font-medium"
-               href="#about"
-               onClick={toggleMenu}
-            >
-               ABOUT
-            </a>
-            <a
-               className="relative-hover-effect text-2xl font-medium"
-               href="#experience"
-               onClick={toggleMenu}
-            >
-               EXPERIENCE
-            </a>
-            <a
-               className="relative-hover-effect text-2xl font-medium"
-               href="#projects"
-               onClick={toggleMenu}
-            >
-               PROJECT
-            </a>
-            <a
-               className="relative-hover-effect text-2xl font-medium"
-               href="#contact"
-               onClick={toggleMenu}
-            >
-               CONTACT
-            </a>
-            <a
-               className="relative-hover-effect text-xl font-medium flex items-center space-x-2"
-               href="https://github.com/abdulrahemfaqih"
-               target="_blank"
-               rel="noreferrer"
-            >
-               <GithubLogo size={32} />
-               <p>abdulrahemfaqih</p>
-            </a>
-         </div>
+          <div
+        className={`md:hidden flex flex-col space-y-4 pb-4 transition-all duration-300 ease-in-out transform origin-top ${
+          isMenuOpen
+            ? 'opacity-100 max-h-[500px] scale-y-100'
+            : 'opacity-0 max-h-0 scale-y-0'
+        }`}
+      >
+        <a
+          className="relative-hover-effect text-2xl font-medium"
+          href="#about"
+          onClick={(e) => handleNavClick(e, 'about')}
+        >
+          ABOUT
+        </a>
+        <a
+          className="relative-hover-effect text-2xl font-medium"
+          href="#experience"
+          onClick={(e) => handleNavClick(e, 'experience')}
+        >
+          EXPERIENCE
+        </a>
+        <a
+          className="relative-hover-effect text-2xl font-medium"
+          href="#projects"
+          onClick={(e) => handleNavClick(e, 'projects')}
+        >
+          PROJECTS
+        </a>
+        <a
+          className="relative-hover-effect text-2xl font-medium"
+          href="#contact"
+          onClick={(e) => handleNavClick(e, 'contact')}
+        >
+          CONTACT
+        </a>
+        <a
+          className="relative-hover-effect text-xl font-medium flex items-center space-x-2"
+          href="https://github.com/abdulrahemfaqih"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <GithubLogo size={32} />
+          <p>abdulrahemfaqih</p>
+        </a>
+      </div>
       </div>
    );
 };
