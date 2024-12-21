@@ -44,8 +44,8 @@ const About = () => {
          </div>
          <div className="mb-16">
           <a
-            href={cvFile}
-            download="Faqih-CV.pdf"
+               href={cvFile}
+               target="_blank"
             className="text-xs inline-flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
           >
             Download CV
