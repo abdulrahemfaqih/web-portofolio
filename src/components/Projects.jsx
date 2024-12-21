@@ -89,9 +89,9 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container  py-16">
-      <h1 className="text-4xl font-bold mb-12 text-gray-900">
-        Featured Projects
+    <div className="container  py-16" id='projects'>
+      <h1 className="relative-hover-effect text-4xl font-bold mb-12 text-gray-900">
+        PROJECT
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projectData.map((project, index) => (

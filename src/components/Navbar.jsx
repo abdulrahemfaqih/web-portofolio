@@ -8,10 +8,20 @@ const Navbar = () => {
       setIsMenuOpen(!isMenuOpen);
    };
 
+
+   const handleNavClick = (e, targetId) => {
+      e.preventDefault();
+      const element = document.getElementById(targetId);
+      if (element) {
+         element.scrollIntoView({ behavior: 'smooth' });
+         setIsMenuOpen(false); // Close mobile menu after clicking
+      }
+   };
+
    return (
       <div className="font-inria container">
          <div className="flex justify-between items-center py-8">
-            <a href="#hero" className="text-5xl font-bold">
+            <a href="#hero"  className="text-3xl md:text-5xl font-bold">
                FAQIH
             </a>
 
@@ -20,24 +30,28 @@ const Navbar = () => {
                <a
                   className="relative-hover-effect text-2xl font-medium"
                   href="#about"
+                  onClick={(e) => handleNavClick(e, 'about')}
                >
                   ABOUT
                </a>
                <a
                   className="relative-hover-effect text-2xl font-medium"
                   href="#experience"
+                  onClick={(e) => handleNavClick(e, 'experience')}
                >
                   EXPERIENCE
                </a>
                <a
                   className="relative-hover-effect text-2xl font-medium "
                   href="#projects"
+                  onClick={(e) => handleNavClick(e, 'projects')}
                >
                   PROJECT
                </a>
                <a
                   className="relative-hover-effect text-2xl font-medium"
                   href="#contact"
+                  onClick={(e) => handleNavClick(e, 'contact')}
                >
                   CONTACT
                </a>

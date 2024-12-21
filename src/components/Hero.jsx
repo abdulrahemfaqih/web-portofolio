@@ -9,7 +9,7 @@ const Hero = () => {
             <h1 className='text-5xl font-medium'>TEKNIK INFORMATIKA</h1>
             <div className='max-w-4xl text-end font-extralight'>(2022-present)</div>
          </div>
-         <img src={me} alt=""  className="mt-8 mx-auto rounded-lg w-96 h-64 object-cover grayscale" />
+         <img src={me}  className="mt-8 mx-auto rounded-lg w-96 h-80 object-cover grayscale" />
       </div>
    );
 };

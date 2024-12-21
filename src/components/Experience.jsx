@@ -1,16 +1,16 @@
 const Experience = () => {
    const experiences = [
       {
-         role: "Frontend Developer",
-         company: "Tech Company",
-         period: "2022 - Present",
-         description: "Developed responsive web applications using React.js and Tailwind CSS"
+         role: "Asisten Praktikum",
+         company: "Program Studi Teknik Informatika, Universitas Trunojoyo Madura",
+         period: "2023 - sekarang",
+         description: "Membantu dosen untuk memberikan materi praktikum pada matakuliah Algoritma dan Dasar pemrograman, Dasar Pemrograman Web, Struktur Data dan Pengambangan Aplikasi Web"
       },
       {
-         role: "Web Developer Intern",
-         company: "Digital Agency",
-         period: "2021 - 2022",
-         description: "Assisted in building and maintaining client websites"
+         role: "Admin Laboratorium Teknik Informatika",
+         company: "progam Studi teknik Informatika, Universitas Trunojoyo Madura",
+         period: "2023 - sekarang",
+         description: "Mengelola dan merawat perangkat keras dan perangkat lunak yang ada di laboratorium, serta membantu mahasiswa dalam penggunaan perangkat keras dan perangkat lunak yang ada di laboratorium"
       }
    ];
 

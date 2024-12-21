@@ -48,7 +48,7 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Code size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold">Programming Languages</h2>
+                  <h2 className="text-2xl font-semibold  uppercase">Programming Languages</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.languages.map((skill) => (
@@ -63,7 +63,7 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Layout size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold">Frontend</h2>
+                  <h2 className="text-2xl font-semibold uppercase">Frontend</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.frontend.map((skill) => (
@@ -78,7 +78,7 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Gear size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold">Backend</h2>
+                  <h2 className="text-2xl font-semibold uppercase">Backend</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.backend.map((skill) => (
@@ -93,7 +93,7 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Database size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold">Database</h2>
+                  <h2 className="text-2xl font-semibold uppercase">Database</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.database.map((skill) => (
