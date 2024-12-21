@@ -4,6 +4,7 @@ import {
   Gear,
   Layout
 } from "@phosphor-icons/react";
+import cvFile from '../assets/cv/abdulrahemfaqih-cv.pdf';
 
 const About = () => {
    const skills = {
@@ -33,7 +34,7 @@ const About = () => {
          <h1 className="relative-hover-effect text-4xl font-bold mb-5">ABOUT ME</h1>
 
          {/* About Description */}
-         <div className="max-w-3xl mb-10">
+         <div className="max-w-3xl mb-5">
             <p className="text-lg leading-relaxed text-gray-800">
                Saya adalah seorang Web Developer dengan fokus pada pengembangan aplikasi modern dan responsif.
                Dengan pengalaman dalam full-stack development, saya senang mengeksplorasi teknologi baru dan
@@ -41,6 +42,29 @@ const About = () => {
                pendidikan di bidang Informatika dan aktif mengembangkan berbagai project personal maupun kolaboratif.
             </p>
          </div>
+         <div className="mb-16">
+          <a
+            href={cvFile}
+            download="Faqih-CV.pdf"
+            className="text-xs inline-flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+          >
+            Download CV
+            <svg
+              className="w-4 h-4 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+          </a>
+        </div>
+
 
          {/* Skills Section */}
          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
