@@ -72,7 +72,7 @@ const Project = ({ title, description, image, techStack, repoLink }) => (
 const Projects = () => {
   const projectData = [
     {
-      title: "E-Commerce Platform",
+      title: "Sistem Sekolah Terintegrasi",
       description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
       image: "/api/placeholder/400/300",
       techStack: [
@@ -96,7 +96,148 @@ const Projects = () => {
       repoLink: "https://github.com/yourusername/project1"
     },
     {
-      title: "Task Management App",
+      title: "Tambal Ban Online",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+    {
+      title: "Sitem Indikator Kinerja",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+    {
+      title: "Sistem Klasidikasi Kanker Payudara",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+    {
+      title: "Sistem Informasi Puskesmas",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+    {
+      title: "Sistem Rencana Studi",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+
+    {
+      title: "Sistem Cuti Akademik",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+    {
+      title: "Microservice Sistem Cuti Akademik",
+      description: "A collaborative task management application with real-time updates and team features.",
+      image: "/api/placeholder/400/300",
+      techStack: [
+        {
+          name: "React",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+        },
+        {
+          name: "Firebase",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+        },
+        {
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg"
+        }
+      ],
+      repoLink: "https://github.com/yourusername/project2"
+    },
+    {
+      title: "Sistem Kasir Toko",
       description: "A collaborative task management application with real-time updates and team features.",
       image: "/api/placeholder/400/300",
       techStack: [
