@@ -11,6 +11,7 @@ import me from './assets/images/me.jpg';
 import sekolah from './assets/images/sekolah.png';
 import sidik from './assets/images/sidik.png';
 import tambol from './assets/images/tambol.svg';
+import kanker_payudara from './assets/images/kanker_payudara.png';
 
 function App() {
    const [loading, setLoading] = useState(true);
@@ -25,6 +26,7 @@ function App() {
                sekolah,
                sidik,
                tambol,
+               kanker_payudara
             ];
 
             // Preload all images

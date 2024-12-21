@@ -23,6 +23,7 @@ const About = () => {
          { name: "Express", icon: "express" },
          { name: "Laravel", icon: "laravel" },
          { name: "Flask", icon: "flask" },
+         {name: "Codeigniter", icon: "codeigniter"},
       ],
       database: [
          { name: "MySQL", icon: "mysql" },
