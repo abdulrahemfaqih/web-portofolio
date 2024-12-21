@@ -7,7 +7,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-6">
                <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/abdulrahemfaqih"
                   className="hover:text-gray-600 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -15,7 +15,7 @@ const Footer = () => {
                   <GithubLogo size={24} />
                </a>
                <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/abdul-rahem-faqih-ab98072b6/"
                   className="hover:text-gray-600 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -23,7 +23,7 @@ const Footer = () => {
                   <LinkedinLogo size={24} />
                </a>
                <a
-                  href="mailto:your@email.com"
+                  href="mailto:faqih3935@gmail.com"
                   className="hover:text-gray-600 transition-colors"
                >
                   <EnvelopeSimple size={24} />
