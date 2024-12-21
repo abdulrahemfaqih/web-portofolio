@@ -11,18 +11,45 @@ const Navbar = () => {
    return (
       <div className="font-inria container">
          <div className="flex justify-between items-center py-8">
-            <a href="#hero" className="text-5xl font-bold">FAQIH</a>
+            <a href="#hero" className="text-5xl font-bold">
+               FAQIH
+            </a>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-5">
-               <a className="relative-hover-effect text-2xl font-medium relative-hover-effect" href="#about">ABOUT</a>
-               <a className="relative-hover-effect text-2xl font-medium relative-hover-effect" href="#experience">EXPERIENCE</a>
-               <a className="relative-hover-effect text-2xl font-medium relative-hover-effect" href="#projects">PROJECT</a>
-               <a className="relative-hover-effect text-2xl font-medium relative-hover-effect" href="#contact">CONTACT</a>
+               <a
+                  className="relative-hover-effect text-2xl font-medium"
+                  href="#about"
+               >
+                  ABOUT
+               </a>
+               <a
+                  className="relative-hover-effect text-2xl font-medium"
+                  href="#experience"
+               >
+                  EXPERIENCE
+               </a>
+               <a
+                  className="relative-hover-effect text-2xl font-medium "
+                  href="#projects"
+               >
+                  PROJECT
+               </a>
+               <a
+                  className="relative-hover-effect text-2xl font-medium"
+                  href="#contact"
+               >
+                  CONTACT
+               </a>
             </div>
 
             <div className="hidden md:flex space-x-2 items-center">
-               <a className="relative-hover-effect text-xl font-medium flex items-center space-x-2 relative-hover-effect" href="https://github.com/abdulrahemfaqih" target="_blank" rel="noreferrer">
+               <a
+                  className="relative-hover-effect text-xl font-medium flex items-center space-x-2"
+                  href="https://github.com/abdulrahemfaqih"
+                  target="_blank"
+                  rel="noreferrer"
+               >
                   <GithubLogo size={32} />
                   <p>abdulrahemfaqih</p>
                </a>
@@ -35,12 +62,45 @@ const Navbar = () => {
          </div>
 
          {/* Mobile Menu */}
-         <div className={`md:hidden flex flex-col space-y-4 pb-4 transition-all duration-300 ease-in-out transform ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full hidden'}`}>
-            <a className="relative-hover-effect text-2xl font-medium" href="#about" onClick={toggleMenu}>ABOUT</a>
-            <a className="relative-hover-effect text-2xl font-medium" href="#experience" onClick={toggleMenu}>EXPERIENCE</a>
-            <a className="relative-hover-effect text-2xl font-medium" href="#projects" onClick={toggleMenu}>PROJECT</a>
-            <a className="relative-hover-effect text-2xl font-medium" href="#contact" onClick={toggleMenu}>CONTACT</a>
-            <a className="relative-hover-effect text-xl font-medium flex items-center space-x-2" href="https://github.com/abdulrahemfaqih" target="_blank" rel="noreferrer">
+         <div
+            className={`md:hidden flex flex-col space-y-4 pb-4 ${
+               isMenuOpen ? "block" : "hidden"
+            }`}
+         >
+            <a
+               className="relative-hover-effect text-2xl font-medium"
+               href="#about"
+               onClick={toggleMenu}
+            >
+               ABOUT
+            </a>
+            <a
+               className="relative-hover-effect text-2xl font-medium"
+               href="#experience"
+               onClick={toggleMenu}
+            >
+               EXPERIENCE
+            </a>
+            <a
+               className="relative-hover-effect text-2xl font-medium"
+               href="#projects"
+               onClick={toggleMenu}
+            >
+               PROJECT
+            </a>
+            <a
+               className="relative-hover-effect text-2xl font-medium"
+               href="#contact"
+               onClick={toggleMenu}
+            >
+               CONTACT
+            </a>
+            <a
+               className="relative-hover-effect text-xl font-medium flex items-center space-x-2"
+               href="https://github.com/abdulrahemfaqih"
+               target="_blank"
+               rel="noreferrer"
+            >
                <GithubLogo size={32} />
                <p>abdulrahemfaqih</p>
             </a>

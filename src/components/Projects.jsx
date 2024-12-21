@@ -41,7 +41,7 @@ const Project = ({ title, description, image, techStack, repoLink }) => (
           href={repoLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+          className="inline-flex items-center  hover:text-blue-800 font-medium"
         >
           View Repository
           <svg
@@ -89,7 +89,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="container  py-16">
       <h1 className="text-4xl font-bold mb-12 text-gray-900">
         Featured Projects
       </h1>
