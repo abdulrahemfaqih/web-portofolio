@@ -1,5 +1,10 @@
 
 
+import sekolah from '../assets/images/sekolah.png';
+import sidik from '../assets/images/sidik.png';
+import tambol from '../assets/images/tambol.svg';
+
+
 // eslint-disable-next-line react/prop-types
 const Project = ({ title, description, image, techStack, repoLink }) => (
   <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:border hover:border-gray-200 duration-300">
@@ -72,25 +77,25 @@ const Project = ({ title, description, image, techStack, repoLink }) => (
 const Projects = () => {
   const projectData = [
     {
-      title: "Sistem Sekolah Terintegrasi",
+      title: "Learning Management System",
       description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      image: "/api/placeholder/400/300",
+      image: sekolah,
       techStack: [
         {
-          name: "React",
-          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+          name: "JavaScript",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
         },
         {
-          name: "Node.js",
-          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+          name: "Laravel",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg"
         },
         {
-          name: "MongoDB",
-          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+          name: "Tailwind",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg"
         },
         {
-          name: "Express",
-          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+          name: "MySQL",
+          icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
         }
       ],
       repoLink: "https://github.com/yourusername/project1"
@@ -98,7 +103,7 @@ const Projects = () => {
     {
       title: "Tambal Ban Online",
       description: "A collaborative task management application with real-time updates and team features.",
-      image: "/api/placeholder/400/300",
+      image: tambol,
       techStack: [
         {
           name: "React",
@@ -116,9 +121,9 @@ const Projects = () => {
       repoLink: "https://github.com/yourusername/project2"
     },
     {
-      title: "Sitem Indikator Kinerja",
+      title: "Sitem Indikator Kinerja - SIDIK",
       description: "A collaborative task management application with real-time updates and team features.",
-      image: "/api/placeholder/400/300",
+      image: sidik,
       techStack: [
         {
           name: "React",
