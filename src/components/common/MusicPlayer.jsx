@@ -11,13 +11,13 @@ const MusicPlayer = () => {
             audioRef.current.pause();
             toast.success('Music stopped', {
                 icon: '🎵',
-                position: 'bottom-right',
+                position: 'bottom-left',
             });
         } else {
             audioRef.current.play();
             toast.success('Playing DJ Music', {
                 icon: '🎧',
-                position: 'bottom-right',
+                position: 'bottom-left',
             });
         }
         setIsPlaying(!isPlaying);
