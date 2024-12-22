@@ -4,9 +4,15 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const [isScrolled, setIsScrolled] = useState(false);
+   const [isContactSection, setIsContactSection] = useState(false);
 
    useEffect(() => {
       const handleScroll = () => {
+         const contactSection = document.querySelector('#contact');
+         if (contactSection) {
+            const rect = contactSection.getBoundingClientRect();
+            setIsContactSection(rect.top <= 0 && rect.bottom >= 0);
+         }
          if (window.scrollY > 0) {
             setIsScrolled(true);
          } else {
@@ -39,11 +45,16 @@ const Navbar = () => {
          <div className="h-28"></div>
 
          {/* Navbar */}
-         <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-sm border-b shadow-sm' : 'bg-white/80 backdrop-blur-sm border-b shadow-sm'
+         <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isContactSection
+            ? 'bg-black/80 backdrop-blur-sm border-b border-gray-700'
+            : isScrolled
+               ? 'bg-white/80 backdrop-blur-sm border-b shadow-sm'
+               : 'bg-white/80 backdrop-blur-sm border-b shadow-sm'
             }`}>
             <div className="font-inria container">
                <div className="flex justify-between items-center py-6 md:py-8">
-                  <a href="#hero" className="text-3xl md:text-5xl font-bold">
+                  <a href="#hero" className={`text-3xl md:text-5xl font-bold ${isContactSection ? 'text-white' : 'text-black'
+                     }`}>
                      FAQIH
                   </a>
 
@@ -91,18 +102,17 @@ const Navbar = () => {
                      </a>
                   </div>
 
-                  {/* Hamburger Button */}
-                  <button className="md:hidden" onClick={toggleMenu}>
+                  {/* Hamburger Menu */}
+                  <button className={`md:hidden ${isContactSection ? 'text-white' : 'text-black'
+                     }`} onClick={toggleMenu}>
                      {isMenuOpen ? <X size={32} /> : <List size={32} />}
                   </button>
                </div>
 
                {/* Mobile Menu */}
-               <div
-                  className={`md:hidden flex flex-col space-y-4  transition-all duration-300 ease-in-out transform origin-top ${isMenuOpen
-                     ? 'opacity-100 max-h-[500px] scale-y-100'
-                     : 'opacity-0 max-h-0 scale-y-0'
-                     }`}
+               <div className={`md:hidden flex flex-col space-y-4  ${isContactSection ? 'text-white' : 'text-black'
+                  } transition-all duration-300 ease-in-out transform origin-top ${isMenuOpen ? 'opacity-100 max-h-[500px] scale-y-100 pb-6' : 'opacity-0 max-h-0 scale-y-0'
+                  }`}
                >
                   <a
                      className="relative-hover-effect text-2xl font-medium"
