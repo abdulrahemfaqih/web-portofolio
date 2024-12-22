@@ -3,7 +3,7 @@ import me from '../assets/images/me.jpg'
 
 const Hero = () => {
    return (
-      <div className="container font-inria text-center py-20" id='hero'>
+      <div className="container font-inria text-center py-10 md:py-20" id='hero'>
          <div className='space-y-2'>
             <h1 className='text-6xl font-bold'>WEB DEVELOPER</h1>
             <h1 className='text-5xl font-medium'>STUDENT & TECH ENTHUSIAST</h1>
