@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { motion } from 'framer-motion';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -18,6 +19,36 @@ import kasir from './assets/images/kasir.png';
 import sister from './assets/images/sister.png';
 import puskesmas from './assets/images/puskesmas.png';
 import kanker_payudara from './assets/images/kanker_payudara.png';
+
+// Animasi untuk section
+const sectionVariants = {
+   hidden: {
+      opacity: 0,
+      y: 50
+   },
+   visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+         duration: 0.6,
+         ease: "easeOut"
+      }
+   }
+};
+
+// Komponen Section dengan animasi
+const AnimatedSection = ({ children }) => {
+   return (
+      <motion.div
+         initial="hidden"
+         whileInView="visible"
+         viewport={{ once: true, amount: 0.2 }}
+         variants={sectionVariants}
+      >
+         {children}
+      </motion.div>
+   );
+};
 
 function App() {
    const [loading, setLoading] = useState(true);
@@ -40,7 +71,6 @@ function App() {
                puskesmas
             ];
 
-            // Preload all images
             const imagePromises = imageUrls.map(url => {
                return new Promise((resolve, reject) => {
                   const img = new Image();
@@ -50,7 +80,6 @@ function App() {
                });
             });
 
-            // Wait for all resources and minimum time
             await Promise.all([
                Promise.all(imagePromises),
                new Promise(resolve => {
@@ -89,12 +118,24 @@ function App() {
       <div>
          <Toaster position="top-center" reverseOrder={false} />
          <Navbar />
-         <Hero />
-         <About />
-         <Experience />
-         <Projects />
-         <Contact />
-         <Footer />
+         <AnimatedSection>
+            <Hero />
+         </AnimatedSection>
+         <AnimatedSection>
+            <About />
+         </AnimatedSection>
+         <AnimatedSection>
+            <Experience />
+         </AnimatedSection>
+         <AnimatedSection>
+            <Projects />
+         </AnimatedSection>
+         <AnimatedSection>
+            <Contact />
+         </AnimatedSection>
+         <AnimatedSection>
+            <Footer />
+         </AnimatedSection>
          <MusicPlayer />
       </div>
    );
