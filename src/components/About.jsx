@@ -53,13 +53,13 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Code size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold  uppercase">Programming Languages</h2>
+                  <h2 className="text-xl md:text-2xl font-semibold  uppercase">Programming Languages</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.languages.map((skill) => (
                      <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-                        <span className="text-lg">{skill.name}</span>
+                        <img src={skill.icon} alt={skill.name} className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="text-md md:text-lg">{skill.name}</span>
                      </div>
                   ))}
                </div>
@@ -69,13 +69,13 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Layout size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold uppercase">Frontend</h2>
+                  <h2 className="text-xl md:text-2xl  font-semibold uppercase">Frontend</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.frontend.map((skill) => (
                      <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-                        <span className="text-lg">{skill.name}</span>
+                        <img src={skill.icon} alt={skill.name} className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="text-md md:text-lg">{skill.name}</span>
                      </div>
                   ))}
                </div>
@@ -85,13 +85,13 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Gear size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold uppercase">Backend</h2>
+                  <h2 className="text-xl md:text-2xl  font-semibold uppercase">Backend</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.backend.map((skill) => (
                      <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-                        <span className="text-lg">{skill.name}</span>
+                        <img src={skill.icon} alt={skill.name} className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="text-md md:text-lg">{skill.name}</span>
                      </div>
                   ))}
                </div>
@@ -101,13 +101,13 @@ const About = () => {
             <div className="skill-group">
                <div className="flex items-center gap-2 mb-4">
                   <Database size={24} weight="bold" />
-                  <h2 className="text-2xl font-semibold uppercase">Database</h2>
+                  <h2 className="text-xl md:text-2xl  font-semibold uppercase">Database</h2>
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.database.map((skill) => (
                      <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
-                        <span className="text-lg">{skill.name}</span>
+                        <img src={skill.icon} alt={skill.name} className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="text-md md:text-lg">{skill.name}</span>
                      </div>
                   ))}
                </div>
