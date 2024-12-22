@@ -1,34 +1,14 @@
 import {
-  Code,
-  Database,
-  Gear,
-  Layout
+   Code,
+   Database,
+   Gear,
+   Layout
 } from "@phosphor-icons/react";
 import cvFile from '../assets/cv/abdulrahemfaqih-cv.pdf';
+import skills from '../data/SkillsData';
 
 const About = () => {
-   const skills = {
-      languages: [
-         { name: "JavaScript", icon: "js" },
-         { name: "Java", icon: "ts" },
-         { name: "Python", icon: "python" },
-         { name: "PHP", icon: "php" },
-      ],
-      frontend: [
-         { name: "React", icon: "react" },
-         { name: "Tailwind", icon: "tailwind" },
-         { name: "Bootstrap", icon: "bootstrap" },
-      ],
-      backend: [
-         { name: "Express", icon: "express" },
-         { name: "Laravel", icon: "laravel" },
-         { name: "Flask", icon: "flask" },
-         {name: "Codeigniter", icon: "codeigniter"},
-      ],
-      database: [
-         { name: "MySQL", icon: "mysql" },
-      ]
-   };
+
 
    return (
       <div className="container font-inria" id="about">
@@ -36,7 +16,7 @@ const About = () => {
 
          {/* About Description */}
          <div className="max-w-3xl mb-5">
-            <p className="text-lg leading-relaxed text-gray-800">
+            <p className="text-lg leading-relaxed text-gray-800 text-">
                Saya adalah seorang Web Developer dengan fokus pada pengembangan aplikasi modern dan responsif.
                Dengan pengalaman dalam full-stack development, saya senang mengeksplorasi teknologi baru dan
                menciptakan solusi yang efisien untuk berbagai kebutuhan digital. Saat ini saya sedang menempuh
@@ -44,27 +24,27 @@ const About = () => {
             </p>
          </div>
          <div className="mb-16">
-          <a
+            <a
                href={cvFile}
                target="_blank"
-            className="text-xs inline-flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            Download CV
-            <svg
-              className="w-4 h-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+               className="text-sm inline-flex items-center px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              />
-            </svg>
-          </a>
-        </div>
+               Download CV
+               <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+               >
+                  <path
+                     strokeLinecap="round"
+                     strokeLinejoin="round"
+                     strokeWidth={2}
+                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+               </svg>
+            </a>
+         </div>
 
 
          {/* Skills Section */}
@@ -77,7 +57,8 @@ const About = () => {
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.languages.map((skill) => (
-                     <div key={skill.name} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                     <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
                         <span className="text-lg">{skill.name}</span>
                      </div>
                   ))}
@@ -92,7 +73,8 @@ const About = () => {
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.frontend.map((skill) => (
-                     <div key={skill.name} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                     <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
                         <span className="text-lg">{skill.name}</span>
                      </div>
                   ))}
@@ -107,7 +89,8 @@ const About = () => {
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.backend.map((skill) => (
-                     <div key={skill.name} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                     <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
                         <span className="text-lg">{skill.name}</span>
                      </div>
                   ))}
@@ -122,7 +105,8 @@ const About = () => {
                </div>
                <div className="grid grid-cols-2 gap-4">
                   {skills.database.map((skill) => (
-                     <div key={skill.name} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                     <div key={skill.name} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <img src={skill.icon} alt={skill.name} className="w-6 h-6" />
                         <span className="text-lg">{skill.name}</span>
                      </div>
                   ))}

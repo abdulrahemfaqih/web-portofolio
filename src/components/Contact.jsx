@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import toast from 'react-hot-toast';
 
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',

@@ -149,12 +149,12 @@ const projectData = [
         image: studi1,
         techStack: [
             {
-                name: "React",
-                icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+                name: "Laravel",
+                icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg"
             },
             {
-                name: "Firebase",
-                icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg"
+                name: "MySQL",
+                icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg"
             },
             {
                 name: "Tailwind",
