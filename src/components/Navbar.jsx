@@ -52,7 +52,7 @@ const Navbar = () => {
             ? 'bg-black/80 backdrop-blur-sm border-b border-gray-700'
             : isScrolled
                ? 'bg-white/80 backdrop-blur-sm border-b shadow-sm'
-               : 'bg-white/80 backdrop-blur-sm border-b shadow-sm'
+               : 'bg-white/80 backdrop-blur-sm border-b '
             }`}>
             <div className="font-inria container">
                <div className="flex justify-between items-center py-6 md:py-8">
