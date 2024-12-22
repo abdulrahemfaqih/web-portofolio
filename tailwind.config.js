@@ -2,12 +2,15 @@
 export default {
    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
    theme: {
-      
+
       extend: {
+         gridTemplateColumns: {
+            '52': 'repeat(52, minmax(0, 1fr))',
+         },
          fontFamily: {
-        // Perbaiki nama class yang digunakan
-         inria: ["Inria Serif", "serif"], // Gunakan 'bree' sebagai nama class
-      },
+            // Perbaiki nama class yang digunakan
+            inria: ["Inria Serif", "serif"], // Gunakan 'bree' sebagai nama class
+         },
          screens: {
             sm: "640px",
             md: "768px",

@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import MusicPlayer from './components/common/MusicPlayer';
 import me from './assets/images/me.jpg';
 import sekolah from './assets/images/sekolah.png';
 import sidik from './assets/images/sidik.png';
@@ -94,6 +95,7 @@ function App() {
          <Projects />
          <Contact />
          <Footer />
+         <MusicPlayer />
       </div>
    );
 }
