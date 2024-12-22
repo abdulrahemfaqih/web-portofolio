@@ -4,6 +4,18 @@ export default {
    theme: {
 
       extend: {
+         animation: {
+            'color-change': 'colorChange 5s infinite',
+         },
+         keyframes: {
+            colorChange: {
+               '0%': { backgroundColor: '#ffffff' },
+               '25%': { backgroundColor: '#f0f9ff' },
+               '50%': { backgroundColor: '#e0f2fe' },
+               '75%': { backgroundColor: '#bae6fd' },
+               '100%': { backgroundColor: '#ffffff' },
+            }
+         },
          gridTemplateColumns: {
             '52': 'repeat(52, minmax(0, 1fr))',
          },
