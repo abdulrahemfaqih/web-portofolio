@@ -11,7 +11,7 @@ const Navbar = () => {
          const contactSection = document.querySelector('#contact');
          if (contactSection) {
             const rect = contactSection.getBoundingClientRect();
-            setIsContactSection(rect.top <= 0 && rect.bottom >= 0);
+            setIsContactSection(rect.top <= 100 && rect.bottom >= 0);
          }
          if (window.scrollY > 0) {
             setIsScrolled(true);
@@ -34,6 +34,9 @@ const Navbar = () => {
       e.preventDefault();
       const element = document.getElementById(targetId);
       if (element) {
+         if (targetId === 'contact') {
+            setIsContactSection(true);
+         }
          element.scrollIntoView({ behavior: 'smooth' });
          setIsMenuOpen(false);
       }
