@@ -121,21 +121,11 @@ function App() {
          <AnimatedSection>
             <Hero />
          </AnimatedSection>
-         <AnimatedSection>
-            <About />
-         </AnimatedSection>
-         <AnimatedSection>
-            <Experience />
-         </AnimatedSection>
-         <AnimatedSection>
-            <Projects />
-         </AnimatedSection>
-         <AnimatedSection>
-            <Contact />
-         </AnimatedSection>
-         <AnimatedSection>
-            <Footer />
-         </AnimatedSection>
+         <About />
+         <Experience />
+         <Projects />
+         <Contact />
+         <Footer />
          <MusicPlayer />
       </div>
    );
