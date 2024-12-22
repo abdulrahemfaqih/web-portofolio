@@ -59,7 +59,7 @@ const Contact = () => {
   return (
     <div className='bg-black text-white'>
       <div className="container mx-auto py-16" id='contact'>
-        <h1 className="relative-hover-effect text-4xl font-bold mb-12">KONTAK</h1>
+        <h1 className="relative-effect text-4xl font-bold mb-12">KONTAK</h1>
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold">Mari Terhubung</h2>

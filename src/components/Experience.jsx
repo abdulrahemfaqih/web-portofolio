@@ -3,7 +3,7 @@ import experiences from "../data/ExperienceData";
 const Experience = () => {
    return (
       <div className="container py-20" id="experience">
-         <h1 className="relative-hover-effect text-4xl font-bold mb-10">
+         <h1 className="relative-effect text-4xl font-bold mb-10">
             EXPERIENCE
          </h1>
          <div className="max-w-6xl mx-auto">

@@ -12,7 +12,7 @@ const About = () => {
 
    return (
       <div className="container font-inria" id="about">
-         <h1 className="relative-hover-effect text-4xl font-bold mb-5">ABOUT ME</h1>
+         <h1 className="relative-effect text-4xl font-bold mb-5">ABOUT ME</h1>
 
          {/* About Description */}
          <div className="max-w-3xl mb-5">
