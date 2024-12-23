@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 const MusicPlayer = () => {
    const [isPlaying, setIsPlaying] = useState(false);
    const [isScrolling, setIsScrolling] = useState(false);
-   const audioRef = useRef(new Audio("/audio/dj2.mp3"));
+   const audioRef = useRef(new Audio("/audio/dj1.mp3"));
    const scrollTimeout = useRef(null);
 
    useEffect(() => {
