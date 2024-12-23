@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import Navbar from "./components/Navbar";
@@ -20,7 +20,6 @@ import sister from './assets/images/sister.png';
 import puskesmas from './assets/images/puskesmas.png';
 import kanker_payudara from './assets/images/kanker_payudara.png';
 
-// Animasi untuk section
 const sectionVariants = {
    hidden: {
       opacity: 0,
@@ -36,7 +35,6 @@ const sectionVariants = {
    }
 };
 
-// Komponen Section dengan animasi
 const AnimatedSection = ({ children }) => {
    return (
       <motion.div
@@ -52,6 +50,8 @@ const AnimatedSection = ({ children }) => {
 
 function App() {
    const [loading, setLoading] = useState(true);
+   const [isPlaying, setIsPlaying] = useState(false);
+   const audioRef = useRef(new Audio());
 
    useEffect(() => {
       const startTime = Date.now();
@@ -59,16 +59,8 @@ function App() {
       const preloadResources = async () => {
          try {
             const imageUrls = [
-               me,
-               sekolah,
-               sidik,
-               tambol,
-               kanker_payudara,
-               rencana,
-               studi1,
-               kasir,
-               sister,
-               puskesmas
+               me, sekolah, sidik, tambol, kanker_payudara,
+               rencana, studi1, kasir, sister, puskesmas
             ];
 
             const imagePromises = imageUrls.map(url => {
@@ -106,9 +98,7 @@ function App() {
                <div className="mb-4">
                   <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black mx-auto"></div>
                </div>
-               <p className="text-lg font-medium">
-                  Tunggu sebentar
-               </p>
+               <p className="text-lg font-medium">Tunggu sebentar</p>
             </div>
          </div>
       );
@@ -116,17 +106,18 @@ function App() {
 
    return (
       <div>
+         <audio ref={audioRef} style={{ display: 'none' }} />
          <Toaster position="top-center" reverseOrder={false} />
          <Navbar />
          <AnimatedSection>
-            <Hero />
+            <Hero audioRef={audioRef} isPlaying={isPlaying} />
          </AnimatedSection>
          <About />
          <Experience />
          <Projects />
          <Contact />
          <Footer />
-         <MusicPlayer />
+         <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
       </div>
    );
 }
