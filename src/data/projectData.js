@@ -78,7 +78,7 @@ const projectData = [
             icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg",
          },
       ],
-      repoLink: "https://github.com/yourusername/project2",
+      repoLink: "#",
       isPrivate: true,
    },
    {
@@ -119,7 +119,7 @@ const projectData = [
             icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg",
          },
       ],
-      repoLink: "https://github.com/yourusername/project2",
+      repoLink: "#",
       isPrivate: true,
    },
    {
