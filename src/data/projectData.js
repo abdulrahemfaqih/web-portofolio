@@ -7,6 +7,7 @@ import studi1 from "../assets/images/studi1.png";
 import kasir from "../assets/images/kasir.png";
 import sister from "../assets/images/sister.png";
 import puskesmas from "../assets/images/puskesmas.png";
+import dashboard from "../assets/images/template.png";
 
 const projectData = [
    {
@@ -219,6 +220,23 @@ const projectData = [
       repoLink: "https://github.com/abdulrahemfaqih/pengembangan-aplikasi-web",
       isPrivate: false,
    },
+   {
+      title: "Dashboard Template",
+      description: "Template dashboard modern dan responsif yang dibangun menggunakan Tailwind CSS. Dilengkapi dengan komponen-komponen UI yang dapat digunakan kembali, sistem layout yang fleksibel, dan interaksi dinamis menggunakan JavaScript.",
+      image: dashboard,
+      techStack: [
+         {
+            name: "JavaScript",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+         },
+         {
+            name: "Tailwind",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
+         }
+      ],
+      repoLink: "https://github.com/abdulrahemfaqih/template-dashboard-tailwindcss",
+      isPrivate: false,
+   }
 ];
 
 export default projectData;
