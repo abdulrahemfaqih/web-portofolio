@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 const Project = ({ title, description, image, techStack, repoLink, isPrivate }) => {
     const handleRepoClick = (e) => {
