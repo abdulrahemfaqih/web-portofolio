@@ -49,7 +49,7 @@ const Navbar = () => {
 
          {/* Navbar */}
          <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isContactSection
-            ? 'bg-black/80 backdrop-blur-sm border-b border-gray-700'
+            ? 'bg-black/80 backdrop-blur-sm border-b border-gray-700 text-white'
             : isScrolled
                ? 'bg-white/80 backdrop-blur-sm border-b shadow-sm'
                : 'bg-white/80 backdrop-blur-sm border-b '
@@ -64,28 +64,28 @@ const Navbar = () => {
                   {/* Desktop Menu */}
                   <div className="hidden md:flex space-x-5">
                      <a
-                        className="relative-hover-effect text-2xl font-medium"
+                        className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                         href="#about"
                         onClick={(e) => handleNavClick(e, 'about')}
                      >
                         ABOUT
                      </a>
                      <a
-                        className="relative-hover-effect text-2xl font-medium"
+                        className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                         href="#experience"
                         onClick={(e) => handleNavClick(e, 'experience')}
                      >
                         EXPERIENCE
                      </a>
                      <a
-                        className="relative-hover-effect text-2xl font-medium"
+                        className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                         href="#projects"
                         onClick={(e) => handleNavClick(e, 'projects')}
                      >
                         PROJECT
                      </a>
                      <a
-                        className="relative-hover-effect text-2xl font-medium"
+                        className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                         href="#contact"
                         onClick={(e) => handleNavClick(e, 'contact')}
                      >
@@ -95,7 +95,7 @@ const Navbar = () => {
 
                   <div className="hidden md:flex space-x-2 items-center">
                      <a
-                        className="relative-hover-effect text-xl font-medium flex items-center space-x-2"
+                        className={`text-xl font-medium flex items-center space-x-2 ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                         href="https://github.com/abdulrahemfaqih"
                         target="_blank"
                         rel="noreferrer"
@@ -118,35 +118,35 @@ const Navbar = () => {
                   }`}
                >
                   <a
-                     className="relative-hover-effect text-2xl font-medium"
+                     className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                      href="#about"
                      onClick={(e) => handleNavClick(e, 'about')}
                   >
                      ABOUT
                   </a>
                   <a
-                     className="relative-hover-effect text-2xl font-medium"
+                     className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                      href="#experience"
                      onClick={(e) => handleNavClick(e, 'experience')}
                   >
                      EXPERIENCE
                   </a>
                   <a
-                     className="relative-hover-effect text-2xl font-medium"
+                     className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                      href="#projects"
                      onClick={(e) => handleNavClick(e, 'projects')}
                   >
                      PROJECTS
                   </a>
                   <a
-                     className="relative-hover-effect text-2xl font-medium"
+                     className={`text-2xl font-medium ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                      href="#contact"
                      onClick={(e) => handleNavClick(e, 'contact')}
                   >
                      CONTACT
                   </a>
                   <a
-                     className="relative-hover-effect text-xl font-medium flex items-center space-x-2"
+                     className={`text-xl font-medium flex items-center space-x-2 ${isContactSection ? 'relative-hover-effect-white' : 'relative-hover-effect'}`}
                      href="https://github.com/abdulrahemfaqih"
                      target="_blank"
                      rel="noreferrer"
