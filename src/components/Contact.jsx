@@ -12,7 +12,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    emailjs.init("4lJ9di3ic_7HIYZOZ");
+    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
   }, []);
 
   const handleChange = (e) => {
@@ -36,10 +36,10 @@ const Contact = () => {
       };
 
       const response = await emailjs.send(
-        'service_qp8zite',
-        'template_co6ew1s',
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        '4lJ9di3ic_7HIYZOZ'
+        import.meta.env.VITE_EMAILJS_USER_ID
       );
 
       if (response.status === 200) {
