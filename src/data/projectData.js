@@ -8,6 +8,7 @@ import kasir from "../assets/images/kasir.png";
 import sister from "../assets/images/sister.png";
 import puskesmas from "../assets/images/puskesmas.png";
 import dashboard from "../assets/images/template.png";
+import project from "../assets/images/project.png";
 
 const projectData = [
    {
@@ -232,9 +233,41 @@ const projectData = [
          {
             name: "Tailwind",
             icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
-         }
+         },
+
+
       ],
       repoLink: "https://github.com/abdulrahemfaqih/template-dashboard-tailwindcss",
+      isPrivate: false,
+   },
+   {
+      title: "Project Management System",
+      description:
+      "Platform manajemen proyek yang membantu tim dalam merencanakan, melacak, dan mengelola proyek dari awal hingga selesai. Dilengkapi dengan fitur kolaborasi, penjadwalan tugas, pelacakan kemajuan, dan pelaporan untuk meningkatkan produktivitas dan efisiensi tim.",
+      image: project,
+      techStack: [
+         {
+            name: "Laravel",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg",
+         },
+         {
+            name: "Tailwind",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
+         },
+         {
+            name: "MySQL",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",
+         },
+         {
+            name: "Inertia JS",
+            icon: "https://avatars.githubusercontent.com/u/47703742?s=200&v=4",
+         },
+         {
+            name: "React",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+         },
+      ],
+      repoLink: "https://github.com/abdulrahemfaqih/project-management",
       isPrivate: false,
    }
 ];
