@@ -4,7 +4,7 @@ const blogData = [
         title: "Implementasi Service Repository Pattern Laravel",
         summary: "Tutorial lengkap tentang implementasi Service Repository Pattern Laravel menggunakan Laravel 11.",
         date: "2025-01-31 12:00:00",
-        image: "https://i.ibb.co.com/pvVp9mMj/IMG20250128183757.jpg"
+        image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*wpqzwBLX7Ok-qdqb"
     }
 
 ]

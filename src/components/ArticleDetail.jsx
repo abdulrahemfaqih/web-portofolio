@@ -1,8 +1,11 @@
 import { useParams, useLocation, Navigate } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { articleMapping } from '../articles';
 
 const ArticleDetail = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const { flag } = useParams();
     const location = useLocation();
     const date = location.state?.date;
