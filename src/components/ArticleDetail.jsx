@@ -8,7 +8,7 @@ const ArticleDetail = () => {
     }, []);
     const { flag } = useParams();
     const location = useLocation();
-    const date = location.state?.date;
+    const date = location.state?.date || "2025-01-31";
 
     const ArticleComponent = articleMapping[flag];
 

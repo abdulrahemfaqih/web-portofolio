@@ -1,6 +1,5 @@
 import blogData from '../data/blogData';
 import Article from './common/Article';
-import Project from './common/Project';
 
 
 
