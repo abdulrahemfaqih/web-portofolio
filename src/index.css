@@ -12,6 +12,15 @@
   }
 }
 
+.react-draggable {
+   touch-action: none; /* Mencegah scroll pada perangkat touch */
+   cursor: grab; /* Menunjukkan bahwa elemen bisa di-drag */
+}
+
+.react-draggable:active {
+   cursor: grabbing; /* Mengubah cursor saat elemen di-drag */
+}
+
 
 @layer utilities {
   .relative-hover-effect {

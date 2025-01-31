@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -30,7 +30,8 @@ const sectionVariants = {
       y: 0,
       transition: {
          duration: 0.6,
-         ease: "easeOut"
+         ease: "easeOut",
+         staggerChildren: 0.2 // Animasi bertahap untuk anak-anak elemen
       }
    }
 };
@@ -42,6 +43,7 @@ const AnimatedSection = ({ children }) => {
          whileInView="visible"
          viewport={{ once: true, amount: 0.2 }}
          variants={sectionVariants}
+         style={{ willChange: 'opacity, transform' }} // Optimasi rendering
       >
          {children}
       </motion.div>
@@ -109,9 +111,11 @@ function App() {
          <audio ref={audioRef} style={{ display: 'none' }} />
          <Toaster position="top-center" reverseOrder={false} />
          <Navbar />
-         <AnimatedSection>
-            <Hero audioRef={audioRef} isPlaying={isPlaying} />
-         </AnimatedSection>
+         <AnimatePresence>
+            <AnimatedSection>
+               <Hero audioRef={audioRef} isPlaying={isPlaying} />
+            </AnimatedSection>
+         </AnimatePresence>
          <About />
          <Experience />
          <Projects />
