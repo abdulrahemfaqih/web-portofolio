@@ -1,5 +1,5 @@
 import { useParams, useLocation, Navigate } from 'react-router-dom';
-import { lazy, Suspense, useEffect } from 'react';
+import { useEffect } from 'react';
 import { articleMapping } from '../articles';
 
 const ArticleDetail = () => {
@@ -17,7 +17,7 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="container max-w-4xl mx-auto px-4">
+        <div className="container md:max-w-4xl mx-auto px-4">
             <ArticleComponent date={date} />
         </div>
     );

@@ -2,7 +2,7 @@ import { formatRelativeTime } from "../utils/formatDate";
 
 const ImplementasiCrudLaravel11 = ({ date }) => {
     return (
-        <div className="container px-4 py-8 mx-auto">
+        <div className="container px-4 py-8 mx-auto  break-words">
             <h2 className="text-3xl font-bold mb-6 md:text-5xl">Implementasi CRUD + Fitur Tambahan di Laravel 11 dengan Service Repository Pattern</h2>
             <p className="text-gray-600 mb-4">{ formatRelativeTime(date) }</p>
             <div className="prose max-w-none">
@@ -66,7 +66,7 @@ DB_PASSWORD=`}
                     </code>
                 </pre>
                 <p className="mt-4">
-                    Edit file migration di `database/migrations/xxxx_xx_xx_create_products_table.php`:
+                    Edit file migration di database/migrations/xxxx_xx_xx_create_products_table.php:
                 </p>
                 <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
                     <code>
