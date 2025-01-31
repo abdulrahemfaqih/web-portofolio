@@ -2,12 +2,15 @@ import { useState, useEffect, useRef } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Articles from './components/Articles';
+import ArticleDetail from './components/ArticleDetail';
 import MusicPlayer from './components/common/MusicPlayer';
 import me from './assets/images/me.jpg';
 import sekolah from './assets/images/sekolah.png';
@@ -107,22 +110,31 @@ function App() {
    }
 
    return (
-      <div>
-         <audio ref={audioRef} style={{ display: 'none' }} />
-         <Toaster position="top-center" reverseOrder={false} />
-         <Navbar />
-         <AnimatePresence>
-            <AnimatedSection>
-               <Hero audioRef={audioRef} isPlaying={isPlaying} />
-            </AnimatedSection>
-         </AnimatePresence>
-         <About />
-         <Experience />
-         <Projects />
-         <Contact />
-         <Footer />
-         <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
-      </div>
+      <Router>
+         <div>
+            <audio ref={audioRef} style={{ display: 'none' }} />
+            <Toaster position="top-center" reverseOrder={false} />
+            <Navbar />
+            <Routes>
+               <Route path="/" element={
+                  <>
+                     <AnimatedSection>
+                        <Hero audioRef={audioRef} isPlaying={isPlaying} />
+                     </AnimatedSection>
+                     <About />
+                     <Experience />
+                     <Projects />
+                     <Articles/>
+                     <Contact />
+                  </>
+               } />
+               <Route path="/articles" element={<Articles />} />
+               <Route path="/article/:flag" element={<ArticleDetail />} />
+            </Routes>
+            <Footer />
+            <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
+         </div>
+      </Router>
    );
 }
 
