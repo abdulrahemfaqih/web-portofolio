@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import { Toaster } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from "./components/Navbar";
@@ -134,6 +135,7 @@ function App() {
             <Footer />
             <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
          </div>
+         <Analytics />
       </Router>
    );
 }
