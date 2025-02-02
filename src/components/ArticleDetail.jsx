@@ -17,7 +17,7 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="container md:max-w-4xl mx-auto px-4">
+        <div className="container md:py-8 pb-8 md:max-w-4xl mx-auto">
             <ArticleComponent date={date} />
         </div>
     );
