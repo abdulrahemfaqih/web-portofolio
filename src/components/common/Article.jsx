@@ -24,9 +24,9 @@ const Article = ({ flag, summary, title, date, image }) => {
             {/* Content Container - Flex with dynamic height */}
             <div className="p-6 flex flex-col flex-grow">
                 {/* Title - Fixed height */}
-                <h3 className="text-xl font-semibold mb-3 text-gray-800 h-7 line-clamp-1">
+                <Link to={`/article/${flag}`} className="text-xl font-semibold mb-3 text-gray-800 h-7 line-clamp-1">
                     {title}
-                </h3>
+                </Link>
 
                 {/* Description - Fixed height with line clamp */}
                 <div className="h-[4.5rem]">
@@ -43,7 +43,7 @@ const Article = ({ flag, summary, title, date, image }) => {
                 <div className="pt-4 border-t border-gray-100">
                     <Link
                         to={`/article/${flag}`}
-                        state={{ date: date }} 
+                        state={{ date: date }}
                         rel="noopener noreferrer"
                         className={`inline-flex items-center font-medium  'hover:text-blue-800'}`}
                     >
