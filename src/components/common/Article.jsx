@@ -29,7 +29,7 @@ const Article = ({ flag, summary, title, date, image }) => {
                 </Link>
 
                 {/* Description - Fixed height with line clamp */}
-                <div className='md:space-y-4'>
+                <div className='space-y-4'>
                     <div className="h-[4.5rem]">
                         <p className="text-gray-600 line-clamp-3">
                             {summary}
