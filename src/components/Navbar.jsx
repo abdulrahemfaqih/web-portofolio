@@ -105,7 +105,7 @@ const Navbar = () => {
                   </Link>
 
                   {/* Desktop Menu */}
-                  <div className="hidden md:flex space-x-5">
+                  <div className="hidden md:flex space-x-7">
                      {renderMenuItem('section', 'about', 'ABOUT')}
                      {renderMenuItem('section', 'experience', 'EXPERIENCE')}
                      {renderMenuItem('section', 'projects', 'PROJECT')}
