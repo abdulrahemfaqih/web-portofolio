@@ -24,6 +24,7 @@ import sister from './assets/images/sister.png';
 import puskesmas from './assets/images/puskesmas.png';
 import kanker_payudara from './assets/images/kanker_payudara.png';
 import { Helmet } from 'react-helmet';
+import NotFound from './components/NotFound';
 
 const sectionVariants = {
    hidden: {
@@ -138,6 +139,7 @@ function App() {
                } />
                <Route path="/articles" element={<Articles />} />
                <Route path="/article/:flag" element={<ArticleDetail />} />
+               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
             <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
