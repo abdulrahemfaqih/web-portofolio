@@ -29,15 +29,18 @@ const Article = ({ flag, summary, title, date, image }) => {
                 </Link>
 
                 {/* Description - Fixed height with line clamp */}
-                <div className="h-[4.5rem]">
-                    <p className="text-gray-600 line-clamp-3">
-                        {summary}
-                    </p>
-                </div>
-                <div className="mb-4 h-[4.5rem]">
-                    <p className="text-gray-800 line-clamp-3">
-                        {formatRelativeTime(date)}
-                    </p>
+                <div className='space-y-4'>
+                    <div className="h-[4.5rem]">
+                        <p className="text-gray-600 line-clamp-3">
+                            {summary}
+                        </p>
+                    </div>
+                    {/* date */}
+                    <div className="h-[4.5rem] text-sm">
+                        <p className="text-gray-800 line-clamp-3">
+                            {formatRelativeTime(date)}
+                        </p>
+                    </div>
                 </div>
                 {/* Repository Link */}
                 <div className="pt-4 border-t border-gray-100">

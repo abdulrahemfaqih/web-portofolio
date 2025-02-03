@@ -8,7 +8,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
             <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mt-6 mb-4">1. Pendahuluan</h3>
                 <p>
-                    Dalam tutorial ini, kita akan mengimplementasikan CRUD (Create, Read, Update, Delete) dengan fitur tambahan seperti upload gambar, export/import Excel, dan notifikasi menggunakan Service Repository Pattern di Laravel 11. Pola ini memisahkan logika bisnis (Service), akses data (Repository), dan controller, sehingga kode lebih modular dan mudah di-maintain.
+                    Dalam tutorial ini, kita akan mengimplementasikan CRUD (Create, Read, Update, Delete) dengan fitur tambahan seperti upload gambar dan export/import Excel menggunakan Service Repository Pattern di Laravel 11. Pola ini memisahkan logika bisnis (Service), akses data (Repository), dan controller, sehingga kode lebih modular dan mudah di-maintain.
                 </p>
 
                 <h3 className="text-2xl font-bold mt-6 mb-4">2. Langkah 1: Setup Awal</h3>
