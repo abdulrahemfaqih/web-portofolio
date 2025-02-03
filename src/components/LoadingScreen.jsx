@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const LoadingDots = () => {
     return (
-        <div className="flex justify-center space-x-2 mt-4">
+        <div className="flex justify-center space-x-2 mt-6">
             {[0, 1, 2].map((i) => (
                 <div
                     key={i}
@@ -14,6 +14,16 @@ const LoadingDots = () => {
                     }}
                 />
             ))}
+            <style>{`
+                @keyframes bounce {
+                    0%, 100% {
+                        transform: translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                }
+            `}</style>
         </div>
     );
 };
