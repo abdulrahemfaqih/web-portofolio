@@ -4,7 +4,7 @@ import {
    Gear,
    Layout
 } from "@phosphor-icons/react";
-import cvFile from '../assets/cv/abdulrahemfaqih-cv.pdf';
+import cvFile from '../assets/cv/CV-Abdul Rahem Faqih.pdf';
 import skills from '../data/SkillsData';
 
 const About = () => {
