@@ -23,6 +23,7 @@ import kasir from './assets/images/kasir.png';
 import sister from './assets/images/sister.png';
 import puskesmas from './assets/images/puskesmas.png';
 import kanker_payudara from './assets/images/kanker_payudara.png';
+import { Helmet } from 'react-helmet';
 
 const sectionVariants = {
    hidden: {
@@ -112,6 +113,12 @@ function App() {
 
    return (
       <Router>
+         <Helmet>
+            <meta name="description" content="Portfolio Abdul Rahem Faqih - Fullstack Developer specializing in Laravel and React" />
+            <meta name="keywords" content="Abdul Rahem Faqih, Frontend Developer, React Developer, Laravel Developer, Backend Developer" />
+            <meta property="og:title" content="Abdul Rahem Faqih | Portfolio" />
+            <meta property="og:description" content="Fullstack Developer specializing in Laravel and React" />
+         </Helmet>
          <div>
             <audio ref={audioRef} style={{ display: 'none' }} />
             <Toaster position="top-center" reverseOrder={false} />

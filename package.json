@@ -19,6 +19,7 @@
     "react-draggable": "^4.4.6",
     "react-ga4": "^2.1.0",
     "react-github-calendar": "^4.5.2",
+    "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.5.1",
     "react-router-dom": "^7.1.4"
   },
