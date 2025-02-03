@@ -25,6 +25,32 @@ import puskesmas from './assets/images/puskesmas.png';
 import kanker_payudara from './assets/images/kanker_payudara.png';
 import { Helmet } from 'react-helmet';
 import NotFound from './components/NotFound';
+import LoadingScreen from './components/LoadingScreen';
+
+const pageVariants = {
+   initial: {
+      opacity: 0,
+      y: 20,
+      scale: 0.98
+   },
+   animate: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+         duration: 0.8,
+         ease: [0.6, -0.05, 0.01, 0.99],
+         staggerChildren: 0.1
+      }
+   },
+   exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+         duration: 0.4
+      }
+   }
+};
 
 const sectionVariants = {
    hidden: {
@@ -35,9 +61,9 @@ const sectionVariants = {
       opacity: 1,
       y: 0,
       transition: {
-         duration: 0.6,
-         ease: "easeOut",
-         staggerChildren: 0.2 // Animasi bertahap untuk anak-anak elemen
+         duration: 0.8,
+         ease: [0.6, -0.05, 0.01, 0.99],
+         staggerChildren: 0.2
       }
    }
 };
@@ -49,7 +75,7 @@ const AnimatedSection = ({ children }) => {
          whileInView="visible"
          viewport={{ once: true, amount: 0.2 }}
          variants={sectionVariants}
-         style={{ willChange: 'opacity, transform' }} // Optimasi rendering
+         style={{ willChange: 'opacity, transform' }}
       >
          {children}
       </motion.div>
@@ -58,6 +84,7 @@ const AnimatedSection = ({ children }) => {
 
 function App() {
    const [loading, setLoading] = useState(true);
+   const [contentReady, setContentReady] = useState(false);
    const [isPlaying, setIsPlaying] = useState(false);
    const audioRef = useRef(new Audio());
 
@@ -84,7 +111,7 @@ function App() {
                Promise.all(imagePromises),
                new Promise(resolve => {
                   const elapsed = Date.now() - startTime;
-                  const delay = Math.max(1000 - elapsed, 0);
+                  const delay = Math.max(1500 - elapsed, 0);
                   setTimeout(resolve, delay);
                })
             ]);
@@ -93,6 +120,8 @@ function App() {
             console.error('Failed to load resources:', error);
          } finally {
             setLoading(false);
+            // Add a slight delay before showing content
+            setTimeout(() => setContentReady(true), 100);
          }
       };
 
@@ -100,51 +129,58 @@ function App() {
    }, []);
 
    if (loading) {
-      return (
-         <div className="min-h-screen flex items-center justify-center bg-white">
-            <div className="text-center">
-               <div className="mb-4">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black mx-auto"></div>
-               </div>
-               <p className="text-lg font-medium">Tunggu sebentar</p>
-            </div>
-         </div>
-      );
+      return <LoadingScreen onLoadingComplete={() => setLoading(false)} />;
    }
 
    return (
       <Router>
-         <Helmet>
-            <meta name="description" content="Portfolio Abdul Rahem Faqih - Fullstack Developer specializing in Laravel and React" />
-            <meta name="keywords" content="Abdul Rahem Faqih, Frontend Developer, React Developer, Laravel Developer, Backend Developer" />
-            <meta property="og:title" content="Abdul Rahem Faqih | Portfolio" />
-            <meta property="og:description" content="Fullstack Developer specializing in Laravel and React" />
-         </Helmet>
-         <div>
-            <audio ref={audioRef} style={{ display: 'none' }} />
-            <Toaster position="top-center" reverseOrder={false} />
-            <Navbar />
-            <Routes>
-               <Route path="/" element={
-                  <>
-                     <AnimatedSection>
-                        <Hero audioRef={audioRef} isPlaying={isPlaying} />
-                     </AnimatedSection>
-                     <About />
-                     <Experience />
-                     <Projects />
-                     <Articles/>
-                     <Contact />
-                  </>
-               } />
-               <Route path="/articles" element={<Articles />} />
-               <Route path="/article/:flag" element={<ArticleDetail />} />
-               <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Footer />
-            <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
-         </div>
-         <Analytics />
+         <AnimatePresence mode="wait">
+            <motion.div
+               initial="initial"
+               animate={contentReady ? "animate" : "initial"}
+               exit="exit"
+               variants={pageVariants}
+            >
+               <Helmet>
+                  {/* ... your helmet content ... */}
+               </Helmet>
+               <div className="overflow-hidden">
+                  <audio ref={audioRef} style={{ display: 'none' }} />
+                  <Toaster position="top-center" reverseOrder={false} />
+                  <motion.div
+                     initial={{ y: -100, opacity: 0 }}
+                     animate={{ y: 0, opacity: 1 }}
+                     transition={{ delay: 0.2, duration: 0.6 }}
+                  >
+                     <Navbar />
+                  </motion.div>
+                  <Routes>
+                     <Route path="/" element={
+                        <motion.div
+                           initial={{ opacity: 0 }}
+                           animate={{ opacity: 1 }}
+                           transition={{ duration: 0.8 }}
+                        >
+                           <AnimatedSection>
+                              <Hero audioRef={audioRef} isPlaying={isPlaying} />
+                           </AnimatedSection>
+                           <About />
+                           <Experience />
+                           <Projects />
+                           <Articles />
+                           <Contact />
+                        </motion.div>
+                     } />
+                     <Route path="/articles" element={<Articles />} />
+                     <Route path="/article/:flag" element={<ArticleDetail />} />
+                     <Route path="*" element={<NotFound />} />
+                  </Routes>
+                  <Footer />
+                  <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
+               </div>
+               <Analytics />
+            </motion.div>
+         </AnimatePresence>
       </Router>
    );
 }
