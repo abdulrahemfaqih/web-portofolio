@@ -17,7 +17,7 @@ const About = () => {
          {/* About Description */}
          <div className="max-w-3xl mb-5">
             <p className="text-lg leading-relaxed text-gray-800 text-">
-               Saya adalah seorang Web Developer dengan fokus pada pengembangan aplikasi modern dan responsif.
+               Nama saya Abdul Rahem Faqih bisa dipanggil Faqih, Saya adalah seorang Web Developer dengan fokus pada pengembangan aplikasi modern dan responsif.
                Dengan pengalaman dalam full-stack development, saya senang mengeksplorasi teknologi baru dan
                menciptakan solusi yang efisien untuk berbagai kebutuhan digital. Saat ini saya sedang menempuh
                pendidikan di bidang Informatika dan aktif mengembangkan berbagai project personal maupun kolaboratif.
