@@ -1,8 +1,7 @@
 import { formatRelativeTime } from "../utils/formatDate";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import scriptsArticle1 from '../data/scripts/scriptsArticle1';
-import { s } from "framer-motion/client";
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import scriptsArticle1 from '../data/scripts/scriptsArticleServiceRepoPattern';
 
 const ImplementasiCrudLaravel11 = ({ date }) => {
 
@@ -21,13 +20,13 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buat proyek Laravel 11:
                 </p>
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.createProject}
                 </SyntaxHighlighter>
                 <p className="mt-4">
                     Buat database dan sesuaikan file `.env`:
                 </p>
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.databaseEnv}
                 </SyntaxHighlighter>
 
@@ -35,14 +34,14 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p className="mt-4">
                     3.	Install package Laravel Excel untuk fitur export/import:
                 </p>
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.packageExcel}
                 </SyntaxHighlighter>
 
                 <p className="mt-4">
                     Publish konfigurasi Laravel Excel (opsional):
                 </p>
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.publishConfig}
                 </SyntaxHighlighter>
 
@@ -50,19 +49,19 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buat model Product beserta migration:
                 </p>
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.makeProductModelMigration}
                 </SyntaxHighlighter>
                 <p className="mt-4">
                     Edit file migration di database/migrations/xxxx_xx_xx_create_products_table.php:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.editProductMigration}
                 </SyntaxHighlighter>
                 <p className="mt-4">
                     Jalankan migration:
                 </p>
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {commandArtisanMigrate}
                 </SyntaxHighlighter>
 
@@ -70,13 +69,13 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buat direktori `Repositories` dalam `app/` dan buat file `ProductRepositoryInterface.php`:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.makeProductRepositoryInterface}
                 </SyntaxHighlighter>
                 <p className="mt-4">
                     Buat file `ProductRepository.php`:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.makeProductRepository}
                 </SyntaxHighlighter>
 
@@ -84,7 +83,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buat direktori `Services` dalam `app/` dan buat file `ProductService.php`:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.makeProductService}
                 </SyntaxHighlighter>
 
@@ -93,7 +92,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     Buat controller `ProductController.php`:
                 </p>
 
-                <SyntaxHighlighter language="bash" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.artisanMakeProductController}
                 </SyntaxHighlighter>
 
@@ -101,7 +100,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     Edit file controller di `app/Http/Controllers/ProductController.php`:
                 </p>
 
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.editProductController}
                 </SyntaxHighlighter>
 
@@ -109,7 +108,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buka file app/Providers/AppServiceProvider.php dan tambahkan binding:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.bindingInterfaceRepository}
                 </SyntaxHighlighter>
 
@@ -117,13 +116,13 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buat file ProductsExport.php di app/Exports/:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.makeProductsExport}
                 </SyntaxHighlighter>
                 <p className="mt-4">
                     Buat file ProductsImport.php di app/Imports/:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.makeProductsImport}
                 </SyntaxHighlighter>
 
@@ -131,7 +130,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                 <p>
                     Buka file routes/api.php dan tambahkan routes:
                 </p>
-                <SyntaxHighlighter language="php" style={materialDark} className="rounded-lg">
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticle1.routing}
                     </SyntaxHighlighter>
                 <h3 className="text-2xl font-bold mt-6 mb-4">Kesimpulan</h3>
