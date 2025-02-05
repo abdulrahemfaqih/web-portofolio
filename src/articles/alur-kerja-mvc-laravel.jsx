@@ -1,429 +1,115 @@
 import { formatRelativeTime } from "../utils/formatDate";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import scriptsArticleMvc from "../data/scripts/scriptsArticleMvc";
+import TextHighlight from "../components/common/TextHighlight";
 
 const AlurkerjaMVC = ({ date }) => {
     return (
         <div className="mx-auto  break-words">
             <h2 className="text-3xl font-bold mb-6 md:text-5xl">Memahami dan Implementasi MVC Pattern di Laravel</h2>
-            <p className="text-gray-600 mb-4">{ formatRelativeTime(date) }</p>
+            <p className="text-gray-600 mb-4">{formatRelativeTime(date)}</p>
             <div className="prose max-w-none">
                 <h3 className="text-2xl font-bold mt-6 mb-4">Pengantar</h3>
                 <p>
-                    Dalam tutorial ini, kita akan mengimplementasikan CRUD (Create, Read, Update, Delete) dengan fitur tambahan seperti upload gambar dan export/import Excel menggunakan Service Repository Pattern di Laravel 11. Pola ini memisahkan logika bisnis (Service), akses data (Repository), dan controller, sehingga kode lebih modular dan mudah di-maintain.
+                    MVC (Model-View-Controller) adalah salah satu design pattern yang paling populer dalam pengembangan web. Laravel mengadopsi pattern ini untuk membuat struktur aplikasi yang terorganisir dan mudah di-maintain. Di artikel ini, kita akan mempelajari implementasi MVC di Laravel 11 dengan contoh praktis.
                 </p>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">2. Langkah 1: Setup Awal</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Prerequisites</h3>
+                <ul className="list-disc ml-6 mb-4">
+                    <li>PHP 8.2 atau yang lebih tinggi</li>
+                    <li>Composer (package manager untuk PHP)</li>
+                    <li>MySQL atau database yang didukung Laravel</li>
+                    <li>Laravel 11</li>
+                    <li>Text editor atau IDE (VSCode, PHPStorm, dll)</li>
+                    <li>Pengetahuan dasar tentang PHP dasar dan OOP</li>
+                </ul>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Setup Project</h3>
                 <p>
-                    Buat proyek Laravel 11:
+                    Pertama, mari buat project Laravel baru:
                 </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`composer create-project laravel/laravel:^11 laravel-service-repo
-cd laravel-service-repo`}
-                    </code>
-                </pre>
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.setupLaravel}
+                </SyntaxHighlighter>
+                <h3 className="text-2xl font-bold mt-6 mb-2 italic">Nahh sekarang kota masuk ke MVC nya</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Model</h3>
                 <p className="mt-4">
-                    Buat database dan sesuaikan file `.env`:
+                    Model merepresentasikan data dan tabel. Mari buat model Post untuk blog sederhana:
                 </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=nama_database
-DB_USERNAME=root
-DB_PASSWORD=`}
-                    </code>
-                </pre>
-
-                <p className="mt-4">
-                    3.	Install package Laravel Excel untuk fitur export/import:
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.makeModel}
+                </SyntaxHighlighter>
+                <p className="mt-2">
+                    Ini akan membuat file <TextHighlight text={'app/Models/Post.php'}/> dan migration file.
                 </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`composer require maatwebsite/excel`}
-                    </code>
-                </pre>
+                <p className="mt-6">Edit Model: </p>
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.editModel}
+                </SyntaxHighlighter>
+                <p className="mt-6">Edit migration file di <TextHighlight text={'database/migrations/[timestamp]_create_posts_table.php'}/></p>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Controller</h3>
+                <p className="mt-6">Controller menangani request dan mengatur flow aplikasi. Buat PostController:</p>
+                <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.makeControllerResource}
+                </SyntaxHighlighter>
+                <p className="mt-6">Edit <TextHighlight text={'app/Http/Controllers/PostController.php'} />:</p>
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.editPostController}
+                </SyntaxHighlighter>
+                <h3 className="text-2xl font-bold mt-6 mb-4">View</h3>
+                <p className="mt-6">Views menangani tampilan aplikasi. Buat beberapa blade files:
+                    <TextHighlight text={'resources/views/posts/index.blade.php'} />:</p>
+                <SyntaxHighlighter language="html" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.view}
+                </SyntaxHighlighter>
+                <p className="mt6">Disini saya belum menjelaskan <TextHighlight text={'<x-app-layiyt></x-app-layiyt>'}/>, nanti akan akan saya bahas pada tutorial laravel component, intinya tag itu adalah komponen di component itu tambahkan navbar dan footer, dllnya jadi semua yanga da di dalam tag itu di anggap childrennya</p>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Routes</h3>
+                <p className="mt-6">Tambahkan routes di <TextHighlight text={'routes/web.php'} />:</p>
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.route}
+                </SyntaxHighlighter>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Best Practices</h3>
+                <h4 className="text-lg font-semibold mt-4 mb-2">Model Best Practices</h4>
+                <ul className="list-disc ml-6 mb-4">
+                    <li>Gunakan fillable atau guarded untuk mass assignment protection</li>
+                    <li>Definisikan relationships di model</li>
+                    <li>Gunakan model scopes untuk query yang sering digunakan</li>
+                    <li>Validasi sebaiknya di level request</li>
+                </ul>
+                <h4 className="text-lg font-semibold mt-4 mb-2">Controller Best Practices</h4>
+                <ul className="list-disc ml-6 mb-4">
+                    <li>Keep controllers thin, business logic di service layer</li>
+                    <li>Gunakan form requests untuk validasi kompleks</li>
+                    <li>Implementasi single responsibility principle</li>
+                    <li>Gunakan resource controllers untuk CRUD operations</li>
+                </ul>
+                <h4 className="text-lg font-semibold mt-4 mb-2">View Best Practices</h4>
+                <ul className="list-disc ml-6 mb-4">
+                    <li>Gunakan blade components untuk reusable UI elements</li>
+                    <li>Implementasi layouts untuk konsistensi</li>
+                    <li>Hindari logic kompleks di view</li>
+                    <li>Manfaatkan blade directives</li>
+                </ul>
 
-                <p className="mt-4">
-                    Publish konfigurasi Laravel Excel (opsional):
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`php artisan vendor:publish --provider="Maatwebsite\\Excel\\ExcelServiceProvider"`}
-                    </code>
-                </pre>
-
-
-
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">3. Langkah 2: Buat Model dan Migration</h3>
-                <p>
-                    Buat model Product beserta migration:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`php artisan make:model Product -m`}
-                    </code>
-                </pre>
-                <p className="mt-4">
-                    Edit file migration di database/migrations/xxxx_xx_xx_create_products_table.php:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`public function up(): void
-{
-    Schema::create('products', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->text('description')->nullable();
-        $table->decimal('price', 8, 2);
-        $table->string('image')->nullable(); // Kolom untuk gambar
-        $table->timestamps();
-    });
-}`}
-                    </code>
-                </pre>
-                <p className="mt-4">
-                    Jalankan migration:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`php artisan migrate`}
-                    </code>
-                </pre>
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">4. Langkah 3: Buat Repository</h3>
-                <p>
-                    Buat direktori `Repositories` dalam `app/` dan buat file `ProductRepositoryInterface.php`:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`namespace App\\Repositories;
-
-interface ProductRepositoryInterface
-{
-    public function all();
-    public function find($id);
-    public function create(array $data);
-    public function update($id, array $data);
-    public function delete($id);
-    public function uploadImage($file);
-    public function deleteImage($imagePath);
-}`}
-                    </code>
-                </pre>
-                <p className="mt-4">
-                    Buat file `ProductRepository.php`:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`namespace App\\Repositories;
-
-use App\\Models\\Product;
-
-class ProductRepository implements ProductRepositoryInterface
-{
-    protected $model;
-
-    public function __construct(Product $model)
-    {
-        $this->model = $model;
-    }
-
-    public function all()
-    {
-        return $this->model->all();
-    }
-
-    public function find($id)
-    {
-        return $this->model->findOrFail($id);
-    }
-
-    public function create(array $data)
-    {
-        return $this->model->create($data);
-    }
-
-    public function update($id, array $data)
-    {
-        $product = $this->model->findOrFail($id);
-        $product->update($data);
-        return $product;
-    }
-
-    public function delete($id)
-    {
-        $product = $this->model->findOrFail($id);
-        $product->delete();
-        return $product;
-    }
-
-    public function uploadImage($file)
-    {
-        $imageName = time() . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('images'), $imageName);
-        return 'images/' . $imageName;
-    }
-
-    public function deleteImage($imagePath)
-    {
-        if (file_exists(public_path($imagePath))) {
-            unlink(public_path($imagePath));
-        }
-    }
-}`}
-                    </code>
-                </pre>
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">5. Langkah 4: Buat Service</h3>
-                <p>
-                    Buat direktori `Services` dalam `app/` dan buat file `ProductService.php`:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`namespace App\Services;
-
-use App\Repositories\ProductRepositoryInterface;
-use App\Notifications\ProductNotification;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\ProductsExport;
-use App\Imports\ProductsImport;
-
-class ProductService
-{
-    protected $productRepository;
-
-    public function __construct(ProductRepositoryInterface $productRepository)
-    {
-        $this->productRepository = $productRepository;
-    }
-
-    public function getAllProducts()
-    {
-        return $this->productRepository->all();
-    }
-
-    public function getProductById($id)
-    {
-        return $this->productRepository->find($id);
-    }
-
-    public function createProductWithImage(array $data, $image)
-    {
-        $data['image'] = $this->productRepository->uploadImage($image);
-        $product = $this->productRepository->create($data);
-        return $product;
-    }
-
-    public function updateProductWithImage($id, array $data, $image = null)
-    {
-        if ($image) {
-            $product = $this->productRepository->find($id);
-            $this->productRepository->deleteImage($product->image);
-            $data['image'] = $this->productRepository->uploadImage($image);
-        }
-        return $this->productRepository->update($id, $data);
-    }
-
-    public function deleteProduct($id)
-    {
-        $product = $this->productRepository->find($id);
-        $this->productRepository->deleteImage($product->image);
-        return $this->productRepository->delete($id);
-    }
-
-    public function exportProducts()
-    {
-        return Excel::download(new ProductsExport, 'products.xlsx');
-    }
-
-    public function importProducts($file)
-    {
-        Excel::import(new ProductsImport, $file);
-    }
-}
-` }
-                    </code>
-                </pre>
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">6. Langkah 5: Buat Controller</h3>
-                <p>
-                    Buat controller `ProductController.php`:
-                </p>
-
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`php artisan make:controller ProductController`}
-                    </code>
-                </pre>
-
-                <p className="mt-4">
-                    Edit file controller di `app/Http/Controllers/ProductController.php`:
-                </p>
-
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`namespace App\Http\Controllers;
-
-use App\Services\ProductService;
-use Illuminate\Http\Request;
-
-class ProductController extends Controller
-{
-    protected $productService;
-
-    public function __construct(ProductService $productService)
-    {
-        $this->productService = $productService;
-    }
-
-    public function index()
-    {
-        $products = $this->productService->getAllProducts();
-        return response()->json($products);
-    }
-
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'price' => 'required|numeric',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        $image = $request->file('image');
-        $product = $this->productService->createProductWithImage($data, $image);
-        return response()->json($product, 201);
-    }
-
-    public function show($id)
-    {
-        $product = $this->productService->getProductById($id);
-        return response()->json($product);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $data = $request->validate([
-            'name' => 'sometimes|string|max:255',
-            'description' => 'nullable|string',
-            'price' => 'sometimes|numeric',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        $image = $request->file('image');
-        $product = $this->productService->updateProductWithImage($id, $data, $image);
-        return response()->json($product);
-    }
-
-    public function destroy($id)
-    {
-        $this->productService->deleteProduct($id);
-        return response()->json(null, 204);
-    }
-
-    public function export()
-    {
-        return $this->productService->exportProducts();
-    }
-
-    public function import(Request $request)
-    {
-        $request->validate([
-            'file' => 'required|mimes:xlsx,xls',
-        ]);
-
-        $this->productService->importProducts($request->file('file'));
-        return response()->json(['message' => 'Products imported successfully']);
-    }
-}
-`}
-                    </code>
-                </pre>
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">7. Langkah 6: Binding Interface dan Repository</h3>
-                <p>
-                    Buka file app/Providers/AppServiceProvider.php dan tambahkan binding:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`use App\Repositories\ProductRepositoryInterface;
-use App\Repositories\ProductRepository;
-
-public function register(): void
-{
-    $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
-}
-`}
-                    </code>
-                </pre>
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">8. Langkah 7: Buat Export/Import</h3>
-                <p>
-                    Buat file ProductsExport.php di app/Exports/:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`namespace App\Exports;
-
-use App\Models\Product;
-use Maatwebsite\Excel\Concerns\FromCollection;
-
-class ProductsExport implements FromCollection
-{
-    public function collection()
-    {
-        return Product::all();
-    }
-}
-`}
-                    </code>
-                </pre>
-                <p className="mt-4">
-                    Buat file ProductsImport.php di app/Imports/:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`namespace App\Imports;
-
-use App\Models\Product;
-use Maatwebsite\Excel\Concerns\ToModel;
-
-class ProductsImport implements ToModel
-{
-    public function model(array $row)
-    {
-        return new Product([
-            'name' => $row[0],
-            'description' => $row[1],
-            'price' => $row[2],
-        ]);
-    }
-}
-`}
-                    </code>
-                </pre>
-
-                <h3 className="text-2xl font-bold mt-6 mb-4">9. Langkah 8: Routing</h3>
-                <p>
-                    Buka file routes/api.php dan tambahkan routes:
-                </p>
-                <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                    <code>
-                        {`use App\Http\Controllers\ProductController;
-
-Route::apiResource('products', ProductController::class);
-Route::get('/products/export', [ProductController::class, 'export']);
-Route::post('/products/import', [ProductController::class, 'import']);
-`}
-                    </code>
-                </pre>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Flow MVC di Laravel</h3>
+                <ul className="list-decimal ml-6 mb-4">
+                    <li>User mengakses URL /posts</li>
+                    <li>Route mengarahkan ke PostController@index</li>
+                    <li>Model mengambil data dari database</li>
+                    <li>Controller menerima data dan mengirim ke view</li>
+                    <li>View menampilkan data dengan template blade</li>
+                </ul>
                 <h3 className="text-2xl font-bold mt-6 mb-4">Kesimpulan</h3>
-                <p>
-                    Dengan mengikuti langkah-langkah di atas, Anda telah berhasil mengimplementasikan CRUD, upload gambar, export/import Excel, dan notifikasi menggunakan Service Repository Pattern di Laravel 11. Kode Anda sekarang lebih terstruktur, modular, dan mudah di-maintain.
-                </p>
+                <p className="mt-6">MVC Pattern di Laravel 11 membantu kita:</p>
+
+                <ul className="list-decimal ml-6 mb-4">
+                    <li>Memisahkan logic aplikasi dengan jelas</li>
+                    <li>Membuat code lebih maintainable</li>
+                    <li>Mempermudah testing</li>
+                    <li>Mengorganisir code dengan lebih baik</li>
+
+                </ul>
+                <p className="mt-6">Dengan mengikuti pattern dan best practices ini, kita bisa membuat aplikasi Laravel yang scalable dan mudah di-maintain.</p>
             </div>
         </div>
     );
