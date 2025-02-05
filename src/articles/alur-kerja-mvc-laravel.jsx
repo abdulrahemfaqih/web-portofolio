@@ -3,10 +3,10 @@ import { formatRelativeTime } from "../utils/formatDate";
 const AlurkerjaMVC = ({ date }) => {
     return (
         <div className="mx-auto  break-words">
-            <h2 className="text-3xl font-bold mb-6 md:text-5xl">Implementasi CRUD + Fitur Tambahan di Laravel 11 dengan Service Repository Pattern</h2>
+            <h2 className="text-3xl font-bold mb-6 md:text-5xl">Memahami dan Implementasi MVC Pattern di Laravel</h2>
             <p className="text-gray-600 mb-4">{ formatRelativeTime(date) }</p>
             <div className="prose max-w-none">
-                <h3 className="text-2xl font-bold mt-6 mb-4">1. Pendahuluan</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Pengantar</h3>
                 <p>
                     Dalam tutorial ini, kita akan mengimplementasikan CRUD (Create, Read, Update, Delete) dengan fitur tambahan seperti upload gambar dan export/import Excel menggunakan Service Repository Pattern di Laravel 11. Pola ini memisahkan logika bisnis (Service), akses data (Repository), dan controller, sehingga kode lebih modular dan mudah di-maintain.
                 </p>

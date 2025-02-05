@@ -4,19 +4,17 @@ import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import scriptsArticle1 from '../data/scripts/scriptsArticleServiceRepoPattern';
 
 const ImplementasiCrudLaravel11 = ({ date }) => {
-
-    const commandArtisanMigrate = 'php artisan migrate';
     return (
         <div className="mx-auto  break-words">
             <h2 className="text-3xl font-bold mb-6 md:text-5xl">Implementasi CRUD + Fitur Tambahan di Laravel 11 dengan Service Repository Pattern</h2>
             <p className="text-gray-600 mb-4">{formatRelativeTime(date)}</p>
             <div className="prose max-w-none">
-                <h3 className="text-2xl font-bold mt-6 mb-4">1. Pendahuluan</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Pendahuluan</h3>
                 <p>
                     Dalam tutorial ini, kita akan mengimplementasikan CRUD (Create, Read, Update, Delete) dengan fitur tambahan seperti upload gambar dan export/import Excel menggunakan Service Repository Pattern di Laravel 11. Pola ini memisahkan logika bisnis (Service), akses data (Repository), dan controller, sehingga kode lebih modular dan mudah di-maintain.
                 </p>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">2. Langkah 1: Setup Awal</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 1: Setup Awal</h3>
                 <p>
                     Buat proyek Laravel 11:
                 </p>
@@ -45,7 +43,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     {scriptsArticle1.publishConfig}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">3. Langkah 2: Buat Model dan Migration</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 2: Buat Model dan Migration</h3>
                 <p>
                     Buat model Product beserta migration:
                 </p>
@@ -62,10 +60,10 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     Jalankan migration:
                 </p>
                 <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
-                    {commandArtisanMigrate}
+                    {scriptsArticle1.migrate}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">4. Langkah 3: Buat Repository</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 3: Buat Repository</h3>
                 <p>
                     Buat direktori `Repositories` dalam `app/` dan buat file `ProductRepositoryInterface.php`:
                 </p>
@@ -79,7 +77,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     {scriptsArticle1.makeProductRepository}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">5. Langkah 4: Buat Service</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 4: Buat Service</h3>
                 <p>
                     Buat direktori `Services` dalam `app/` dan buat file `ProductService.php`:
                 </p>
@@ -87,7 +85,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     {scriptsArticle1.makeProductService}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">6. Langkah 5: Buat Controller</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 5: Buat Controller</h3>
                 <p>
                     Buat controller `ProductController.php`:
                 </p>
@@ -104,7 +102,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     {scriptsArticle1.editProductController}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">7. Langkah 6: Binding Interface dan Repository</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 6: Binding Interface dan Repository</h3>
                 <p>
                     Buka file app/Providers/AppServiceProvider.php dan tambahkan binding:
                 </p>
@@ -112,7 +110,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     {scriptsArticle1.bindingInterfaceRepository}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">8. Langkah 7: Buat Export/Import</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 7: Buat Export/Import</h3>
                 <p>
                     Buat file ProductsExport.php di app/Exports/:
                 </p>
@@ -126,7 +124,7 @@ const ImplementasiCrudLaravel11 = ({ date }) => {
                     {scriptsArticle1.makeProductsImport}
                 </SyntaxHighlighter>
 
-                <h3 className="text-2xl font-bold mt-6 mb-4">9. Langkah 8: Routing</h3>
+                <h3 className="text-2xl font-bold mt-6 mb-4">Langkah 8: Routing</h3>
                 <p>
                     Buka file routes/api.php dan tambahkan routes:
                 </p>
