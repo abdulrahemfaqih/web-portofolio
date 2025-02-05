@@ -20,6 +20,7 @@ DB_PASSWORD=`,
         $table->timestamps();
     });
 }`,
+    migrate: 'php artisan migrate',
     makeProductRepositoryInterface: `namespace App\\Repositories;
 
 interface ProductRepositoryInterface
@@ -338,7 +339,7 @@ Route::apiResource('products', ProductController::class);
 Route::get('/products/export', [ProductController::class, 'export']);
 Route::post('/products/import', [ProductController::class, 'import']);
 `,
-    
+
 
 
 };
