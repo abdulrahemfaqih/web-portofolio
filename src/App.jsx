@@ -182,7 +182,7 @@ function App() {
                   {/* Canonical URL */}
                   <link rel="canonical" href="https://abdulrahemfaqih.works" />
                </Helmet>
-
+               <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
                <div className="overflow-hidden">
                   <audio ref={audioRef} style={{ display: 'none' }} />
                   <Toaster position="top-center" reverseOrder={false} />
@@ -215,7 +215,7 @@ function App() {
                      <Route path="*" element={<NotFound />} />
                   </Routes>
                   <Footer />
-                  <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
+                  {/* <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} /> */}
                </div>
                <Analytics />
             </motion.div>
