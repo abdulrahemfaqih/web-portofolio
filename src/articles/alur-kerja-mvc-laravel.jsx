@@ -46,7 +46,10 @@ const AlurkerjaMVC = ({ date }) => {
                 <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
                     {scriptsArticleMvc.editModel}
                 </SyntaxHighlighter>
-                <p className="mt-6">Edit migration file di <TextHighlight text={'database/migrations/[timestamp]_create_posts_table.php'}/></p>
+                <p className="mt-6">Edit migration file di <TextHighlight text={'database/migrations/[timestamp]_create_posts_table.php'} /></p>
+                <SyntaxHighlighter language="php" style={nightOwl} className="rounded-lg">
+                    {scriptsArticleMvc.editMigration}
+                    </SyntaxHighlighter>
                 <h3 className="text-2xl font-bold mt-6 mb-4">Controller</h3>
                 <p className="mt-6">Controller menangani request dan mengatur flow aplikasi. Buat PostController:</p>
                 <SyntaxHighlighter language="bash" style={nightOwl} className="rounded-lg">
