@@ -34,20 +34,19 @@ const Hero = ({ audioRef, isPlaying }) => {
                   (2022-present)
                </motion.div>
             </div>
-            <Draggable>
-               <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  style={{ willChange: 'transform' }} // Optimasi rendering
-               >
-                  <img
-                     src={me}
-                     className="mt-8 mx-auto rounded-lg w-96 h-80 object-cover relative z-10 cursor-grab"
-                     draggable="false" // Mencegah drag default browser
-                  />
-               </motion.div>
-            </Draggable>
+
+            <motion.div
+               initial={{ opacity: 0, scale: 0.9 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 0.6, delay: 0.8 }}
+               style={{ willChange: 'transform' }} // Optimasi rendering
+            >
+               <img
+                  src={me}
+                  className="mt-8 mx-auto rounded-lg w-96 h-80 object-cover relative z-10 cursor-grab"
+                  draggable="false" // Mencegah drag default browser
+               />
+            </motion.div>
          </div>
          <div className="absolute inset-0 flex items-center">
             <AudioVisualizer audioRef={audioRef} isPlaying={isPlaying} />

@@ -105,7 +105,7 @@ const Navbar = () => {
                   </Link>
 
                   {/* Desktop Menu */}
-                  <div className="hidden md:flex space-x-7">
+                  <div className="hidden lg:flex space-x-7">
                      {renderMenuItem('section', 'about', 'ABOUT')}
                      {renderMenuItem('section', 'experience', 'EXPERIENCE')}
                      {renderMenuItem('section', 'projects', 'PROJECT')}
@@ -114,7 +114,7 @@ const Navbar = () => {
                   </div>
 
                   {/* GitHub Link */}
-                  <div className="hidden md:flex space-x-2 items-center">
+                  <div className="hidden lg:flex space-x-2 items-center">
                      <a
                         className={`text-xl font-medium flex items-center space-x-2 ${isContactSection && isHomePage ? 'relative-hover-effect-white' : 'relative-hover-effect'
                            }`}
@@ -129,7 +129,7 @@ const Navbar = () => {
 
                   {/* Hamburger Menu */}
                   <button
-                     className={`md:hidden ${isContactSection && isHomePage ? 'text-white' : 'text-black'}`}
+                     className={`lg:hidden ${isContactSection && isHomePage ? 'text-white' : 'text-black'}`}
                      onClick={() => setIsMenuOpen(!isMenuOpen)}
                   >
                      {isMenuOpen ? <X size={32} /> : <List size={32} />}
@@ -138,7 +138,7 @@ const Navbar = () => {
 
                {/* Mobile Menu */}
                <div
-                  className={`md:hidden flex flex-col space-y-4 ${isContactSection && isHomePage ? 'text-white' : 'text-black'
+                  className={`lg:hidden flex flex-col space-y-4 ${isContactSection && isHomePage ? 'text-white' : 'text-black'
                      }
                   transition-all duration-300 ease-in-out transform origin-top
                   ${isMenuOpen ? 'opacity-100 max-h-[500px] scale-y-100 pb-6' : 'opacity-0 max-h-0 scale-y-0'}`}
