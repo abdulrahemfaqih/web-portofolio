@@ -26,6 +26,7 @@ import kanker_payudara from './assets/images/kanker_payudara.png';
 import { Helmet } from 'react-helmet';
 import NotFound from './components/NotFound';
 import LoadingScreen from './components/LoadingScreen';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const pageVariants = {
    initial: {
@@ -218,6 +219,7 @@ function App() {
                   {/* <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} /> */}
                </div>
                <Analytics />
+               <SpeedInsights />
             </motion.div>
          </AnimatePresence>
       </Router>
