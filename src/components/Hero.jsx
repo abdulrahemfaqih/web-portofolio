@@ -1,8 +1,7 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import me from '../assets/images/me.jpg';
 import AudioVisualizer from './common/AudioVisualizer';
 import { motion } from 'framer-motion';
-import Draggable from 'react-draggable';
 
 const Hero = ({ audioRef, isPlaying }) => {
    return (
