@@ -10,12 +10,12 @@ import Contact from "./components/Contact";
 import ArticleDetail from './components/ArticleDetail';
 import NotFound from './components/NotFound';
 
-export const AppRoutes = ({ audioRef, isPlaying }) => (
+export const AppRoutes = () => (
     <Routes>
         <Route path="/" element={
             <>
                 <AnimatedSection>
-                    <Hero audioRef={audioRef} isPlaying={isPlaying} />
+                    <Hero  />
                 </AnimatedSection>
                 <About />
                 <Experience />

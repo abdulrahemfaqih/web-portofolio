@@ -1,9 +1,8 @@
 import { memo } from 'react';
 import me from '../assets/images/me.jpg';
-import AudioVisualizer from './common/AudioVisualizer';
 import { motion } from 'framer-motion';
 
-const Hero = ({ audioRef, isPlaying }) => {
+const Hero = () => {
    return (
       <div className="w-full font-inria text-center py-5 md:py-20 relative overflow-hidden" id="hero">
          <div className="container mx-auto">
@@ -43,12 +42,9 @@ const Hero = ({ audioRef, isPlaying }) => {
                <img
                   src={me}
                   className="mt-8 mx-auto rounded-lg w-96 h-80 object-cover relative z-10 cursor-grab"
-                  draggable="false" // Mencegah drag default browser
+                  draggable="false"
                />
             </motion.div>
-         </div>
-         <div className="absolute inset-0 flex items-center">
-            <AudioVisualizer audioRef={audioRef} isPlaying={isPlaying} />
          </div>
       </div>
    );

@@ -12,12 +12,9 @@ import { AppRoutes } from './routes';
 import { imageUrls } from './config/images';
 import Navbar from "./components/Navbar";
 import LoadingScreen from './components/LoadingScreen';
-import MusicPlayer from './components/common/MusicPlayer';
 
 function App() {
-   const [isPlaying, setIsPlaying] = useState(false);
-   const audioRef = useRef(new Audio());
-   const { loading, setLoading, contentReady } = useResourceLoader(imageUrls);  
+   const { loading, setLoading, contentReady } = useResourceLoader(imageUrls);
 
    if (loading) {
       return <LoadingScreen onLoadingComplete={() => setLoading(false)} />;
@@ -33,11 +30,10 @@ function App() {
                variants={pageVariants}
             >
                <SeoHelmet />
-               <MusicPlayer setIsPlaying={setIsPlaying} audioRef={audioRef} />
                <div className="overflow-hidden">
                   <Toaster position="top-center" reverseOrder={false} />
                   <Navbar />
-                  <AppRoutes audioRef={audioRef} isPlaying={isPlaying} />
+                  <AppRoutes />
                   <Analytics />
                   <SpeedInsights />
                </div>
