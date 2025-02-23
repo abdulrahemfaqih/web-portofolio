@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 
-const Project = ({ title, description, image, techStack, repoLink, isPrivate }) => {
+const Project = ({ title, description, image, techStack, repoLink, isPrivate, isLive, url }) => {
     const handleRepoClick = (e) => {
         if (isPrivate) {
             e.preventDefault();
@@ -59,7 +59,7 @@ const Project = ({ title, description, image, techStack, repoLink, isPrivate }) 
                     </div>
 
                     {/* Repository Link */}
-                    <div className="pt-4 border-t border-gray-100">
+                    <div className="pt-4 border-t border-gray-100 flex gap-x-4">
                         <a
                             href={repoLink}
                             onClick={handleRepoClick}
@@ -82,6 +82,29 @@ const Project = ({ title, description, image, techStack, repoLink, isPrivate }) 
                                 />
                             </svg>
                         </a>
+                        {isLive && (
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center font-medium hover:text-blue-800"
+                            >
+                                View Live
+                                <svg
+                                    className="w-4 h-4 ml-2"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                </svg>
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>

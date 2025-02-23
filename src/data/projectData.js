@@ -9,6 +9,7 @@ import sister from "../assets/images/sister.png";
 import puskesmas from "../assets/images/puskesmas.png";
 import dashboard from "../assets/images/template.png";
 import project from "../assets/images/project.png";
+import keuangan from "../assets/images/manajemen_pengeluaran.png";
 
 const projectData = [
    {
@@ -37,6 +38,8 @@ const projectData = [
       repoLink:
          "https://github.com/abdulrahemfaqih/sistem-sekolah-terintegrasi",
       isPrivate: false,
+      url: "",
+      isLive: false,
    },
    {
       title: "Tambal Ban Online",
@@ -59,6 +62,8 @@ const projectData = [
       ],
       repoLink: "https://github.com/abdulrahemfaqih/onban-app",
       isPrivate: false,
+      url: "",
+      isLive: false,
    },
    {
       title: "Sitem Indikator Kinerja - SIDIK",
@@ -81,6 +86,8 @@ const projectData = [
       ],
       repoLink: "#",
       isPrivate: true,
+      url: "",
+      isLive: false,
    },
    {
       title: "Sistem Klasidikasi Kanker Payudara",
@@ -100,6 +107,8 @@ const projectData = [
       repoLink:
          "https://github.com/abdulrahemfaqih/klasifikasi-kanker-payudara",
       isPrivate: false,
+      url: "https://klasifikasi-kanker-payudara.streamlit.app",
+      isLive: true,
    },
    {
       title: "Sistem Informasi Puskesmas",
@@ -122,6 +131,8 @@ const projectData = [
       ],
       repoLink: "#",
       isPrivate: true,
+      url: "",
+      isLive: false,
    },
    {
       title: "Sistem Rencana Studi",
@@ -144,6 +155,8 @@ const projectData = [
       ],
       repoLink: "https://github.com/abdulrahemfaqih/rencana-studi",
       isPrivate: false,
+      url: "",
+      isLive: false,
    },
 
    {
@@ -168,6 +181,8 @@ const projectData = [
       repoLink:
          "https://github.com/abdulrahemfaqih/Sistem-Informasi-Cuti-Akademik",
       isPrivate: false,
+      url: "",
+      isLive: false,
    },
    {
       title: "Microservice Sistem Cuti Akademik",
@@ -198,6 +213,8 @@ const projectData = [
       ],
       repoLink: "https://github.com/abdulrahemfaqih/sicutiv2",
       isPrivate: false,
+      url: "",
+      isLive: false,
    },
    {
       title: "Sistem Kasir Toko",
@@ -220,6 +237,8 @@ const projectData = [
       ],
       repoLink: "https://github.com/abdulrahemfaqih/pengembangan-aplikasi-web",
       isPrivate: false,
+      url: "",
+      isLive: false,
    },
    {
       title: "Dashboard Template",
@@ -239,6 +258,8 @@ const projectData = [
       ],
       repoLink: "https://github.com/abdulrahemfaqih/template-dashboard-tailwindcss",
       isPrivate: false,
+      url: "https://template-dashboard-tailwindcss.vercel.app",
+      isLive: true,
    },
    {
       title: "Project Management System",
@@ -269,6 +290,37 @@ const projectData = [
       ],
       repoLink: "https://github.com/abdulrahemfaqih/project-management",
       isPrivate: false,
+      url: "",
+      isLive: false,
+   },
+   {
+      title: "Manajemen Pengeluaran Bulanan",
+      description:
+         "Aplikasi manajemen keuangan yang membantu pengguna dalam melacak pengeluaran bulanan dan mengelola anggaran keuangan. Dilengkapi dengan fitur kategori pengeluaran, laporan keuangan, dan visualisasi data untuk memantau dan mengelola keuangan pribadi.",
+      image: keuangan,
+      techStack: [
+         {
+            name: "React",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+         },
+         {
+            name: "Express JS",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
+
+         },
+         {
+            name: "Tailwind",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
+         },
+         {
+            name: "MongoDB",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
+         },
+      ],
+      repoLink: "https://github.com/abdulrahemfaqih/fe-catat-pengeluaran-anda",
+      isPrivate: false,
+      url: "https://catat-pengeluaran-anda.vercel.app",
+      isLive: true,
    }
 ];
 
