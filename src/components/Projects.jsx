@@ -14,7 +14,7 @@ const Projects = () => {
             </h1>
 
             {/* Wrapper dengan padding yang lebih besar */}
-            <div className="bg-white p-8  border-b-2 border-gray-200 mb-12 hidden md:block">
+            <div className="bg-white p-8  border-b-2 border-gray-200 mb-12 ">
                 <div className="flex items-center justify-between">
                     {/* <h2 className="text-2xl font-semibold text-gray-800 mb-6">GitHub Contributions</h2> */}
                     <GithubStats
